@@ -56,7 +56,6 @@ PREFILLED_TEMPLATE = re.sub('<!MENU!>', MENU, PREFILLED_TEMPLATE)
 PREFILLED_TEMPLATE = re.sub('<!FOOTER!>', FOOTER, PREFILLED_TEMPLATE)
 
 # Go through files and merge with templates, then output
-print(html_files)
 for file in html_files:
     if '\\notes\\' not in file:
         print(file)

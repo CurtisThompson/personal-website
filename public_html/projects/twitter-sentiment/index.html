@@ -4,6 +4,13 @@
 
 	<head>
 		
+		<title>Curtis Thompson - Twitter Sentiment Extraction Challenge</title>
+		<link rel="stylesheet" type="text/css" href="/stylesheets/main.css" />
+		<link rel="stylesheet" type="text/css" href="/stylesheets/projects.css" />
+		<meta name="author" content="Curtis Thompson" />
+		<meta name="description" content="This Kaggle competition involved predicting the substring that highlights a given sentiment, across a dataset of thousands of tweets. I used the roBERTa transformer, alongside several machine learning tricks, to finish 558th out of over 2000 competitors in this competition." />
+		<meta name="keywords" content="curtis, thompson, kaggle, keras, tensorflow, twitter, nlp, natural language processing, machine learning" />
+
 		
 		<!-- Global site tag (gtag.js) - Google Analytics -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-175187876-1"></script>
@@ -66,6 +73,48 @@
 		</div>
 	
 		
+		<div id="main-content">
+			<h1 id="small-header-box">Twitter Sentiment Extraction Challenge</h1>
+			
+			<div class="project-text-box">
+				<div class="info-row"><span class="info-head">Date</span><span class="info-body">April 2020 - June 2020</span></div>
+				<div class="info-row"><span class="info-head">Role</span><span class="info-body">Solo Project</span></div>
+				<div class="info-row"><span class="info-head">Technologies</span><span class="info-body">Python, Keras, Tensorflow</span></div>
+				<div class="info-row"><span class="info-head">Description</span><span class="info-body">This Kaggle competition involved predicting the substring that highlights a given sentiment, across a dataset of thousands of tweets. I used the roBERTa transformer, alongside several machine learning tricks, to finish 558th out of over 2000 competitors in this competition.</span></div>
+			</div>
+			
+			<div class="project-text-box project-button-container">
+				<a href="https://www.kaggle.com/cwthompson/twitter-sentiment-main-model" class="project-button no-option">Notebook</a>
+				<a href="https://www.kaggle.com/c/tweet-sentiment-extraction" class="project-button no-option">Competition</a>
+			</div>
+			
+			<div class="project-text-box project-image-container">
+			    <img src="twitter-sentiment-notebook.png" class="project-image" alt="My competition notebook" />
+			</div>
+			
+			<div class="project-text-box">
+				<h2>Features</h2>
+				<ul>
+					<li>Extraction of substring based on given sentiment</li>
+					<li>roBERTa transformer with CNN head</li>
+					<li>Data augmentation and pseudo labelling</li>
+					<li>Pre- and post-processing of data</li>
+				</ul>
+			</div>
+			
+			<div class="project-text-box">
+				<h2>Questions</h2>
+				<div class="spoiler-button spoilerbutton">What was the challenge?</div>
+				<div id="spoiler1" class="spoiler">The aim of the competition was to create a model that could extract the part of a tweet that highlighted a particular sentiment (positive, negative, neutral), given the tweet and its sentiment.</div>
+				<div class="spoiler-button spoilerbutton">How well did you perform in the challenge?</div>
+				<div id="spoiler2" class="spoiler">I finished 558th out of 2,227 teams with a private leaderboard score of 0.71572. My best submitted model from this notebook actually scored 0.71770 which would have put me in the top 100 (and earned me a silver medal) but I ultimately did not choose that submission for the final evaluation due to the low cross-validation and public leaderboard score.</div>
+				<div class="spoiler-button spoilerbutton">What techniques did you use in your model?</div>
+				<div id="spoiler3" class="spoiler">I used several different techniques that can be seen in my working notebook, including:<ul><li>Pseudo labelling</li><li>Post-processing</li><li>Getting best logits</li><li>Predicting the training dataset</li><li>URL substitution</li><li>Synonym data augmentation</li><li>Adding extra tokens</li></ul></div>
+				<div class="spoiler-button spoilerbutton">If the competition was rerun, what could you do to perform better?</div>
+				<div id="spoiler4" class="spoiler">The data was very noisy; this was obvious to anyone who competed in the competition as some substrings did not contain whole words. Dealing with this noise was difficult. The top teams managed to deal with the noise by adding a character-level model on top of their main transformer to help with predicting the substring along with added noise. This helped many teams achieve a better score, so I would attempt this if the competition was rerun.</div>
+			</div>
+		</div>
+
 		
 		<div id="footer">
 		    <div class="footer-width-container">

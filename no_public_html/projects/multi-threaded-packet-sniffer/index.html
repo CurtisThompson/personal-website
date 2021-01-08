@@ -1,43 +1,13 @@
-<!DOCTYPE html>
-
-<html lang="en">
-
-	<head>
-		<head>
+<!HEADCONTENT!>
 		<title>Curtis Thompson - Multi-Threaded Packet Sniffer</title>
 		<link rel="stylesheet" type="text/css" href="/stylesheets/main.css" />
 		<link rel="stylesheet" type="text/css" href="/stylesheets/projects.css" />
 		<meta name="author" content="Curtis Thompson" />
 		<meta name="description" content="A Linux packet sniffer that is able to detect and analyse Ethernet, ARP, IP, TCP and HTTP packets. The system also detects ARP cache-poisoning attacks, Christmas Tree attacks and blacklisted URL requests. A thread pool of up to 8 threads allows for multiple packets to be analysed at once." />
 		<meta name="keywords" content="curtis, thompson, c, operating systems, ARP, TCP, IP, HTTP, blacklisted URLs, christmas tree, packet sniffer, threading, networks, linux" />
-		
-		<script class="jquery-script" src="/js/jquery-3.2.0.js"></script>
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-175187876-1"></script>
-		<script>
-		  window.dataLayer = window.dataLayer || [];
-		  function gtag(){dataLayer.push(arguments);}
-		  gtag('js', new Date());
-		  gtag('config', 'UA-175187876-1');
-		</script>
+<!HEADCONTENT!>
 
-		<meta charset="UTF-8" />
-		<meta name="theme-color" content="#54a0ac" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<script>
-		$(function(){
-			$('#pre-main').load('/php-assets/menu.html');
-			$('#post-main').load('/php-assets/footer.html');
-			$('#pre-main').addClass('loaded');
-			$('#post-main').addClass('loaded');
-		});</script>
-		<script src="/js/spoiler-change.js"></script>
-	</head>
-	
-	
-	<body>
-	    <div id="pre-main"></div>
-	
+<!BODYCONTENT!>
 		<div id="main-content">
 			<h1 id="small-header-box">Multi-Threaded Packet Sniffer</h1>
 			
@@ -80,7 +50,4 @@
 				<div id="spoiler5" class="spoiler">The program currently is able to parse Ethernet, ARP, IP, and TCP headers, as well as HTTP data. Packets which do not contain any of these headers will be detected by the program, but the information within them is not parsed. Parsing of the data can be added to the source code however due to the layered parsing method, assuming the structure of the data is known.</div>
 			</div>
 		</div>
-		
-		<div id="post-main"></div>
-	</body>
-</html>
+<!BODYCONTENT!>

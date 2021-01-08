@@ -1,42 +1,13 @@
-<!DOCTYPE html>
-
-<html lang="en">
-
-	<head>
+<!HEADCONTENT!>
 		<title>Curtis Thompson - Mike - Virtual Trading Assistant</title>
 		<link rel="stylesheet" type="text/css" href="/stylesheets/main.css" />
 		<link rel="stylesheet" type="text/css" href="/stylesheets/projects.css" />
 		<meta name="author" content="Curtis Thompson" />
 		<meta name="description" content="Built in collaboration with Deutsche Bank, this trading assistant is able to provide you with knowledge on the FTSE 100, as well as alert you to changes in your favourite stocks and major financial news. Mike learns from your interactions, becoming personalised to you and helping to improve your trading experience." />
 		<meta name="keywords" content="curtis, thompson, software engineering, deutsche bank, trading, assistant, FTSE 100, mike, virtual, team, companies, java, sql, nlp" />
-		
-		<script class="jquery-script" src="/js/jquery-3.2.0.js"></script>
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-175187876-1"></script>
-		<script>
-		  window.dataLayer = window.dataLayer || [];
-		  function gtag(){dataLayer.push(arguments);}
-		  gtag('js', new Date());
-		  gtag('config', 'UA-175187876-1');
-		</script>
+<!HEADCONTENT!>
 
-		<meta charset="UTF-8" />
-		<meta name="theme-color" content="#54a0ac" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<script>
-		$(function(){
-			$('#pre-main').load('/php-assets/menu.html');
-			$('#post-main').load('/php-assets/footer.html');
-			$('#pre-main').addClass('loaded');
-			$('#post-main').addClass('loaded');
-		});</script>
-		<script src="/js/spoiler-change.js"></script>
-	</head>
-	
-	
-	<body>
-		<div id="pre-main"></div>
-	
+<!BODYCONTENT!>
 		<div id="main-content">
 			<h1 id="small-header-box">Mike - Virtual Trading Assistant</h1>
 			
@@ -80,7 +51,4 @@
 				<div id="spoiler5" class="spoiler">I think one of the main changes I would make would be to how the user inputted text is handled. Currently, the determine the intent of any queries it must be passed to an external API which returns the results. This offers very little flexibility besides what the API alows to the change (the keywords we are looking for). With more time it would be possible for us to implement our own methods to process the queries and extra relevant information (Python's NLTK offers may tools for this) - which then gives us more options with regards to what Mike can respond to.</div>
 			</div>
 		</div>
-		
-		<div id="post-main"></div>
-	</body>
-</html>
+<!BODYCONTENT!>
