@@ -217,3 +217,26 @@ body {
         min-width: 0;
     }
 }
+
+/* Pre and Post Main */
+#pre-main {
+	padding: 0;
+	margin: 0;
+	background-color: #54a0ac;
+	height: 10em;
+	width: 100%;
+}
+
+#post-main {
+	padding: 0;
+	margin: 0;
+	background-color: #2a2a2a;
+	height: 10em;
+	width: 100%;
+}
+
+#pre-main.loaded,
+#post-main.loaded {
+	width: inherit;
+	height: inherit;
+}
