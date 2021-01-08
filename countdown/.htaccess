@@ -1,0 +1,53 @@
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.*)$ $1.html
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+Options -Indexes
+
+DirectoryIndex default.php
+
+SetEnv TZ Europe/London
+
+<IfModule mod_headers.c>
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires 0
+</IfModule>
+<Files 403.shtml>
+order allow,deny
+allow from all
+</Files>
+
+deny from 188.143.232.22
+deny from 188.143.232.13
+deny from 188.143.232.35
+deny from 188.143.232.19
+deny from 188.143.232.62
+deny from 188.143.232.21
+deny from 188.143.232.24
+deny from 188.143.232.16
+deny from 188.143.232.26
+deny from 188.143.232.15
+deny from 188.143.232.14
+deny from 188.143.232.41
+deny from 188.143.232.43
+deny from 188.143.232.37
+deny from 188.143.232.34
+deny from 188.143.232.40
+deny from 188.143.232.10
+deny from 188.143.232.70
+deny from 188.143.232.11
+deny from 188.143.232.72
+deny from 146.185.200.0/24
+deny from 146.185.201.0/24
+deny from 185.14.195.0/24
+deny from 46.148.30.0/24
+deny from 46.148.31.0/24
+deny from 46.161.62.0/24
+deny from 46.161.63.0/24
+deny from 5.101.217.0/24
+deny from 91.238.114.0/24
+deny from 91.239.24.0/24

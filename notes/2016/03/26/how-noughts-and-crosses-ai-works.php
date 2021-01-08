@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+    	<title>Curtis Thompson - How The Noughts And Crosses AI Works</title>
+    	<link rel="stylesheet" type="text/css" href="/stylesheets/main.css" />
+    	<link rel="stylesheet" type="text/css" href="/stylesheets/notes.css" />
+    	<meta name="author" content="Curtis Thompson" />
+    	<meta name="description" content="A perfect player of noughts and crosses can never lose, only win or draw. Developing computer software that can play perfectly is a simple task and there are several methods to achieve this. On my website you will be able to find two noughts and crosses applications which both use a different method for their artificial intelligence. The application I developed with Delphi uses a very popular algorithm called the minimax algorithm." />
+    	<meta name="keywords" content="curtis, thompson, noughts and crosses, tic tac toe, x, o, perfect, flash, game, programmer, student, portfolio, how it works" />
+        <?php include($_SERVER['DOCUMENT_ROOT'] . '/php-assets/core-header.php'); ?>
+    </head>
+    
+    
+    <body>
+    	<?php include($_SERVER['DOCUMENT_ROOT'] . '/php-assets/menu.php'); ?>
+	
+		<div id="main-content">
+    		<h1 id="small-header-box">How The Noughts And Crosses AI Works</h1>
+    		<div class="notes-text">
+        		<div class="notes-details"><span class="author">Curtis Thompson</span><span class="date">Saturday 26th March 2016</span><span class="topic">Artificial Intelligence</span></div>
+    		
+        		<p>A perfect player of noughts and crosses can never lose, only win or draw. Developing computer software that can play perfectly is a simple task and there are several methods to achieve this. On my website you will be able to find two noughts and crosses applications which both use a different method for their artificial intelligence. The application I developed with Delphi uses a very popular algorithm called the minimax algorithm.</p>
+        		<p>The purpose of the minimax algorithm is to minimise the possible loss for a maximum loss scenario, hence the name. The computer player will look through the game tree at each possible move to see the eventual outcome of the combination of moves played by the human and computer, with both trying to win. Using a heuristic evaluation function it will determine a value for each leaf node (a node which results in gameover) and then return the value to a parent node. The parent node will compare the values and either select the minimum or maximum value depending on whose turn it is on that node. It will then return it's value to it's parent node, continuing this until the first node is reached. After this the minimax algorithm will have decided the move to play.</p>
+        		
+        		<div class="captioned-image">
+        			<img alt="Minimax algorithm" src="minimax.png">
+        			<p>A simplified tree showing how the minimax algorithm decides values.</p>
+        		</div>
+        		
+        		<p>The simplified tree shown above shows the minimax algorithm in action. Starting with the leaf nodes at the bottom the maximum value of each pair is chosen by the parent node above. For example the furthest left node had to choose between 0 and -10 so chose 0. If -10 represented the human player winning and 0 represented a draw this would be a simulation of the computer choosing it's move, playing so that the human cannot win. The next node above then has to choose between 0 and 10, and we assume it is the human's choice as it chose the value which stops the computer winning. At the top, the computer then chooses 0 to stop the human winning. This algorithm works when assuming both players will play perfectly, and as the game tree shows, the game results in a draw.</p>
+        		<p>A simpler method to understand is the method I chose for my flash application, used by Newell and Simon in 1972 for their perfectly playing program. The method consists of eight ordered moves, executing the first available move on the list.</p>
+        		<ol>
+        			<li><strong>Win</strong> - If the player has two pieces in a row they place the third to win</li>
+        			<li><strong>Block</strong> - If the opponent has two in a row the player places the third to block a win</li>
+        			<li><strong>Fork</strong> - The player creates two opportunities to win in a single move</li>
+        			<li><strong>Block A Fork</strong> - The player blocks the opponent's ability to perform a fork</li>
+        			<li><strong>Centre</strong> - The player places a piece in the centre square</li>
+        			<li><strong>Opposite Corner</strong> - If the opponent occupies a corner square the player plays in the opposite corner</li>
+        			<li><strong>Empty Corner</strong> - The player plays in an empty corner</li>
+        			<li><strong>Empty Side</strong> - The player plays in an empty side</li>
+        		</ol>
+        		
+        		<div class="captioned-image">
+        			<img alt="Noughts and crosses fork" src="XandO2.png">
+        			<p>Two potential forks that the application can play.</p>
+        		</div>
+        		
+        		<p>Since both players will be able to spot when either player has a winning opportunity, the method to win at noughts and crosses is to create two opportunities to win in a single move. The opponent will then only be able to block one, allowing the player to play a winning move. This is known as a fork and there are several different ways to play a fork, however after taking into account rotation and reflection of the board there is only two possible forks in the game if the Newell and Simon method is played by the starting player, while the second player will not be able to create a fork and therefore not win. If the second player plays the Newell and Simon method, they will block the ability for the starting player to create a fork and therefore neither player should win.</p>
+        		
+        		<div class="captioned-image">
+        			<img alt="Starting moves and counters" src="XandO1.png">
+        			<p>The two good starting moves, the shaded squares showing where these moves should be countered.</p>
+        		</div>
+        		
+        		<p>The starting move and the second player's reaction to it are important as they can often determine if a player can win the game. For the starting player to remain in control of the game they must play in the centre square or one of the corner squares. If the starting player plays in the centre, the reaction should be to play in a corner square to be able to stop a fork in later moves. If the starting player plays in the corner, the reaction should be to play in the centre to be able to stop a fork in later moves. If the starting player plays on a side square, the reaction should be to play in the centre square as that will allow to second player to take advantage of the game. The starting moves are critical for determining the eventual winner.</p>
+        		<p>Overall, both algorithms are simple to apply to noughts and crosses. The Simon and Newell algorithm is only applicable to noughts and crosses as the computer follows a list of simple instructions that can only be applied to the game, however the minimax algorithm could be applied to a wide variety of games or situations providing the heuristics evaluation function is adapted to the purpose. It is an interesting algorithm, one that provides a fundamental view to artificial intelligence.</p>
+        	</div>
+        	
+            <div class="notes-others">
+        		<?php include($_SERVER['DOCUMENT_ROOT'] . '/php-assets/other-notes.php'); ?>
+            </div>
+    	</div>
+		
+		<?php include($_SERVER['DOCUMENT_ROOT'] . '/php-assets/footer.php'); ?>
+    </body>
+
+</html>

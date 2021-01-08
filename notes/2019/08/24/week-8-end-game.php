@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    
+    <head>
+    	<title>Curtis Thompson - Week 8: End Game</title>
+    	<link rel="stylesheet" type="text/css" href="/stylesheets/main.css" />
+    	<link rel="stylesheet" type="text/css" href="/stylesheets/notes.css" />
+    	<meta name="author" content="Curtis Thompson" />
+    	<meta name="description" content="My time as Website Content Assurance Executive is practically coming to an end. I've enjoyed it so much, and learnt a lot to do with web development. I am sure I will talk about the whole experience in later notes, but first I need to talk about my final week in the job." />
+    	<meta name="keywords" content="student union, website, content, assurance, executive, summer, week 8, web development, PHP, web scraper, final week, positive" />
+		<?php include($_SERVER['DOCUMENT_ROOT'] . '/php-assets/core-header.php'); ?>
+    </head>
+
+
+    <body>
+		<?php include($_SERVER['DOCUMENT_ROOT'] . '/php-assets/menu.php'); ?>
+	
+		<div id="main-content">
+    		<h1 id="small-header-box">Week 8: End Game</h1>
+    		<div class="notes-text">
+        		<div class="notes-details"><span class="author">Curtis Thompson</span><span class="date">Saturday 24th August 2019</span><span class="topic">Personal</span></div>		
+        		<p>My time as Website Content Assurance Executive is practically coming to an end. I've enjoyed it so much, and learnt a lot to do with web development. I am sure I will talk about the whole experience in later notes, but first I need to talk about my final week in the job.</p>
+        		<p>When you get towards the end of a project I think you can take it in one of two ways. The first is to take the foot off the pedal, and cruise towards the finish line. The second is to go for that sprint finish, trying to achieve as much as you can with your little time remaining. I would say I fall more towards the latter. During the final week the plan was to have daily catch-ups with my line manager, just so they will know what will be done by the time I leave. On the Monday he gave me a list of tasks to do for the week, and I was excited to try and complete them all (and even take on more tasks if possible). So yes, I think I fall more towards the latter.</p>
+        		<p>The website was released and mostly complete at this point, so some of these tasks were going to be challenging, but some could be time-consuming. One such task was reviewing the styling consistency of the website. This is something that you could spend forever on, but my plan was to focus on the main styling parts of the website. Similarly, I had to check the menu's on the website to make sure none of them were suffering from a specific bug we found on one page. Not challenging, but time-consuming.</p>
+        		<p>The most exciting task for the week was probably building a web scraper in PHP. Most of my coding during this job was either HTML, CSS, or Javascript - so the chance to take on another technology was something I had to jump on. I had built a Python web scraper in the past so I understood the logic of what to do, I just had to look up some specifics in PHP.</p>
+        	    <p>So what were the main points to take away from the PHP specifics?</p>
+        	    <ul>
+        	        <li>Import (require) simple_html_dom</li>
+        	        <li>$html = file_get_html(...) will get the HTML from a given URL</li>
+        	        <li>$html->find('img', 0) gets the first img element in the HTML</li>
+        	    </ul>
+        	    <p>With these three basics, and a working understanding of PHP, you should be able to make your own web scraper. This is exactly what I did. We now have an email template that scrapes data from the new website, so any "all-member" email that is now sent has been made possible thanks to my coding.</p>
+        	    <p>I also had my final review this week. It was very positive, but I will talk more about that at a later date.</p>
+        	    <p>My last day was full of work, because I wanted it to be. But it was also a chance to say goodbye to my team, which was quite sad. It was a pleasure to work with them, and they are all such nice people. I've learnt a lot from this job, and I am sure I will remember my team forever. Hopefully I can remember all the technical knowledge too.</p>
+        	    <p>Fin.</p>
+            </div>
+            
+            <div class="notes-others">
+        		<?php include($_SERVER['DOCUMENT_ROOT'] . '/php-assets/other-notes.php'); ?>
+            </div>
+    	</div>
+		
+		<?php include($_SERVER['DOCUMENT_ROOT'] . '/php-assets/footer.php'); ?>
+    </body>
+
+</html>

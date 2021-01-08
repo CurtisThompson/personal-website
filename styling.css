@@ -1,0 +1,515 @@
+body {
+	background-color: #EFFAFF;
+	width:100%;
+	max-width:100%;
+	font-size:18px;
+	font-family: Arial, sans-serif;
+	margin:0;
+	border:0;
+	margin-bottom:10px;
+}
+
+p { 
+	line-height: 1.5;
+}
+
+a:link, a:visited { 
+	color:black;
+	text-decoration:none;
+	cursor:auto;
+}
+
+a:link:active, a:visited:active { 
+	color:black;
+} 
+
+#TextLink {
+	color:#7A1F99;
+}
+
+
+/********************
+Menu and Header CSS
+********************/
+
+#HeaderContainer {
+	width:100%;
+	height: 40px;
+	background-color:#11113C; 
+	border-bottom-style:solid;
+	border-bottom-color:#333385;
+	border-width:5px;
+	box-shadow: 0px 5px 30px black;
+}
+
+#CTHeader {
+	height:100%;
+	width:15%;
+	float:left;
+	margin-left:15%;
+}
+
+#CTHeader p {
+	color: white;
+	font-size:24px;
+	font-family: CooperBlack;
+	margin-top:0;
+}
+
+#Menu {
+	width:50%;
+	height:100%;
+	margin-right: 15%;
+	font-size:16px;
+	float:right;
+}
+
+#MenuMobileButton {
+	float:right;
+	width:50%;
+	text-align:right;
+	margin-top:-1%;
+	padding-top:1%;
+	display:none;
+	padding-bottom:1%;
+}
+
+.MenuButton {
+	width:25%;
+	float:left;
+	height:100%;
+	transition: background-color 500ms ease-in;
+}
+
+.MenuButton h2 , #MenuMobileButton h2 {
+	text-align:center;
+	margin:1.4%;
+	height:89%;
+	color:white;
+}
+
+.DropDownButton {
+	width:146%;
+	height:60%;
+	padding:2%;
+	padding-top:5%;
+	margin-top:-0.3%;
+	background-color:#333385;
+	display:none;
+	position:relative;
+	text-align:center;
+	color:white;
+	font-weight:bold;
+}
+
+.MenuButton:hover {
+	background-color: #333385;
+}
+
+.MenuButton:hover .DropDownButton {
+	display:block;
+}
+
+.DropDownButton:hover {
+	display:block;
+	background-color:#9358EB;
+}
+
+#SmallHeaderBox {
+	width:100%;
+	text-align:center;
+	font-size:32px;
+	color:#000000;
+	font-weight:bold;
+	padding:0.5% 0;
+	margin-top:3%;
+	margin-bottom: 1.5%;
+}
+
+/********************
+Home Page CSS
+********************/
+
+#Intro {
+	width: 92%;
+	margin-left: 3%;
+	color: black;
+	font-size: 30px;
+	padding: 1%;
+	text-align: center;
+}
+
+.GridContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 0 10%;
+}
+
+@media (max-width:1000px) {
+    .GridContainer {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width:800px) {
+    .GridContainer {
+        grid-template-columns: 1fr;
+    }
+}
+
+.HomeProjectBox {
+	float:left;
+	width:90%;
+	margin:2% 5% 2% 5%;
+	background: #D8F3FF;
+	border: 1px solid black;
+	border-radius:5px;
+	box-shadow: 0 3px 13px 0 black;
+	transition: background 300ms ease-in;
+}
+
+.HomeProjectBox:hover {
+	background: #8C9EA5;
+}
+
+.HomeProjectBox img {
+	width: 100%;
+	height: 200px;
+	margin: 0;
+	border-radius: 5px 5px 0 0;
+}
+
+.HomeProjectBox h3 {
+	text-align: center;
+	color: black;
+	font-size: 24px;
+	margin: 5px;
+}
+
+.HomeProjectBox p {
+	margin: 1% 2%;
+	color: black;
+}
+
+
+/********************
+Main Pages CSS
+********************/
+
+#MainContent {
+	width:70%;
+	padding: 0 15%;
+	background-color: #EFFAFF;
+}
+
+#PageTextBox, #FlashPageTextBox {
+	margin: auto 1%;
+	padding-right: 2%;
+	display: inline-block;
+	width: 95%;
+}
+
+#PageTextBox h2 {
+	font-size: 24px;
+}
+
+#PageTextBox td {
+	vertical-align: top;
+	padding-right: 3em;
+}
+
+#PageTextBox li {
+	margin-bottom: 0.3em;
+}
+
+.ProjectHR {
+	margin-left: 5%;
+	margin-right: 5%;
+	background-color: black;
+	border: 0;
+	height: 2px;
+}
+
+.ProjectButtonContainer {
+	margin: 10px 0;
+	text-align: center;
+}
+
+.ProjectButton {
+	padding: 5px 15px;
+	background-color: #1F1F6F;
+	border-radius: 15px;
+	display: inline-block;
+	margin: 0 5px;
+	color: white !important;
+}
+
+.ProjectButton:hover {
+	background-color: #3E3E71;
+}
+
+.ProjectButton img {
+	border-radius: 50%;
+	height: 32px;
+	width: 32px;
+	float: left;
+	margin: -5px 10px -5px -15px;
+}
+
+#PageImage {
+	border-style:solid;
+	border-width:1px;
+	width:60%;
+	display: block;
+	margin: 1% auto;
+}
+
+#TimerContainer {
+	margin:1%;
+	width:640px;
+	height:480px;
+	float:left;
+	margin-left:10%;
+}
+
+#SpoilerContainer {
+	width:95%;
+	margin: 1% 2.5%;
+}
+
+.spoilerbutton {
+	background: #B9D9FF;
+	padding: 15px;
+	margin-bottom: 5px;
+	border-radius: 10px 10px 0 0;
+	cursor: pointer;
+	border-bottom: solid 1px #111111;
+}
+
+.spoilerbutton:hover {
+	opacity: 0.5;
+}
+
+.spoilerbutton.blue {
+    background-color: #63ABFF;
+}
+
+.spoiler {
+	width:98%;
+	padding:1%;
+	background: #EEEEFF;
+	margin-bottom: 10px;
+}
+
+/********************
+About Page CSS
+********************/
+
+#AboutImage {
+	margin: 1%;
+	width: 30%;
+	display: inline-block;
+	background: white;
+	border: solid 4px black;
+	vertical-align: top;
+	float: left;
+}
+
+.AboutText {
+	margin-left: 1%;
+	margin-right: 1%;
+	float: none;
+}
+
+#AboutSocialMediaPanel {
+	width:100%;
+	margin:0 auto 1% auto;
+	float:left;	
+}
+
+#AboutSocialMediaPanel .SocialMediaButton {
+	width:8%;
+	margin:1% 2%;
+	height:10%;
+	border-radius:10px;
+	border:solid 4px black;
+	float:left;
+}
+
+#AboutSocialMediaPanel .SocialMediaButton img {
+	height:100%;
+	width:80%;
+	margin:0 auto;
+	display:block;
+	text-align:center;
+}
+
+/********************
+Forms CSS
+********************/
+.formobject {
+	width: 100%;
+	background-color: #EFFAFF;
+	border: none;
+	border-bottom: 3px black dotted;
+	font-size: 24px;
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+.formobject:focus {
+	background-color: #B9D9FF;
+	border-bottom: 3px black solid;
+}
+
+#ContactForm textarea {
+	height: 1.25em;
+	resize: none;
+	padding: 0;
+}
+
+.formsubmit {
+	width: 50%;
+	margin-bottom: 40px;
+	background-color: #B9D9FF;
+	border: none;
+	border-bottom: 3px black solid;
+	font-size: 24px;
+	text-align: center;
+	font-weight: bold;
+}
+
+/********************
+CSS for responsive smaller devices below
+********************/
+
+@media (max-width:1000px) {
+	body {
+		background: #EFFAFF;
+		font-size: 24px;
+	}
+	
+	#MainContent {
+	    width: 90%;
+	    padding: 0 5%;
+		margin: 0;
+		background-color:#EFFAFF;
+		border: none;
+		border-radius: 0;
+		-webkit-box-shadow: 0;
+		-moz-box-shadow: 0;
+		box-shadow: 0 0 0 0;
+	}
+	
+	#PageTextBox, #FlashPageTextBox {
+		margin: 1% auto;
+		padding-right: 0;
+		float:none;
+		width:95%;
+	}
+
+	#PageImage {
+		width: 90%;
+		float: none;
+		margin: 3% 5%;
+	}
+
+	#BehindHeaderContainer, #BehindHeaderBox, #SearchForm {
+		display:none;
+		width: 0;
+	}
+	
+	#HeaderBox {
+		position:static;
+	}
+
+	#MenuMobileButton {
+		display:inline;
+	}
+	
+	#CTHeader {
+		width: auto;
+		position:static;
+		display:inline;
+	}
+	
+	.MenuButton {
+		width:100%;
+	}
+	
+	#HeaderContainer, #Menu, .MenuButton h2, .DropDownButton{
+		position:static;
+	}
+	
+	#Menu, .MenuButton h2, .DropDownButton {
+		width:100%;
+	}
+	
+	#HeaderContainer, .MenuButton, .DropDownButton {
+		float:none;
+	}
+	
+	.MenuButton, .DropDownButton {
+		display:block;
+		background-color:#3E3E71;
+		width:100%;
+		margin:0;
+		text-align: right;
+	}
+	
+	.DropDownText {
+		margin-right: 10%;
+	}
+	
+	.MenuButton h2 {
+		margin-right: 10%;
+		text-align: right;
+	}
+
+	#Menu {
+		display:none;
+	}
+	
+	.MenuButton, .MenuButton h2, .DropDownButton, #Menu, #MenuMobileButton h2 {
+		height:auto;
+		background-color:#3E3E71;
+	}
+	
+	#CTHeader, #MenuMobileButton {
+		height:50px;
+		background-color:#3E3E71;
+	}
+	
+	#CTHeader {
+		padding-top:1%;
+	}
+	
+	.MenuButton, .DropDownButton, #MenuMobileButton, #CTHeader {
+		font-size:30px;
+	}
+	
+	#HeaderContainer {
+		margin: -10px 0 0 0;
+		width:100%;
+		padding: 0;
+		background-color:#3E3E71;
+		height: 70px;
+		box-shadow: 0 0 0 0;
+	}
+	
+	#HeaderBox {
+		margin-top:0;
+	}
+	
+	.spoilerbutton {
+		border-style:none;
+	}
+}
+
+/********************
+Fonts
+********************/
+@font-face {
+	font-family: CooperBlack;
+	src: url('fonts/cooper-black.ttf');
+}
