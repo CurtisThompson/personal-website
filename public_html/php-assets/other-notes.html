@@ -1,0 +1,127 @@
+<h2>Recommended Notes</h2>
+
+<?php
+	$con = mysql_connect("localhost","cthomp98_cmntr","TheCommenter");
+
+	if (!$con)
+	{
+		die('Could not connect: ' . mysql_error());
+	}
+
+	mysql_select_db("cthomp98_web_pages", $con);
+
+	$query = "SELECT * FROM `NoteRecommendations` WHERE Article = '" . $_SERVER['REQUEST_URI'] . "'";
+
+	$notes = mysql_query($query);
+
+	while($recs = mysql_fetch_array($notes, MYSQL_ASSOC))
+	{
+	    $r1 = $recs['Recom1'];
+	    $query = "SELECT * FROM `Notes` WHERE URL = '" . $r1 . "'";
+    	$notes = mysql_query($query);
+    	while($row = mysql_fetch_array($notes, MYSQL_ASSOC))
+    	{
+	    
+    		$date = $row['Date'];  		
+      		$timestamp = date("l jS F Y", strtotime($date));
+    		$title = htmlspecialchars($row['Title'],ENT_QUOTES);
+    		$author = htmlspecialchars($row['Author'],ENT_QUOTES);
+    		$url = htmlspecialchars($row['URL'],ENT_QUOTES);
+    		$desc = htmlspecialchars($row['Description'],ENT_QUOTES);
+    		$img = htmlspecialchars($row['Image'],ENT_QUOTES);
+    	
+    		echo"<div class='notes-indiv-container'>
+    		<a href='$url'><img class='notes-image' alt='$title' src='$img'/></a>
+    		<a href='$url'><h3 class='notes-title'>$title</h3></a>
+    		<p class='notes-time'>$timestamp</p>
+    		<a class='read-article' href='$url'>Read Notes</a>
+    		</div>";
+    	}
+    	
+        $r2 = $recs['Recom2'];
+	    $query = "SELECT * FROM `Notes` WHERE URL = '" . $r2 . "'";
+    	$notes = mysql_query($query);
+    	while($row = mysql_fetch_array($notes, MYSQL_ASSOC))
+    	{
+	    
+    		$date = $row['Date'];  		
+      		$timestamp = date("l jS F Y", strtotime($date));
+    		$title = htmlspecialchars($row['Title'],ENT_QUOTES);
+    		$author = htmlspecialchars($row['Author'],ENT_QUOTES);
+    		$url = htmlspecialchars($row['URL'],ENT_QUOTES);
+    		$desc = htmlspecialchars($row['Description'],ENT_QUOTES);
+    		$img = htmlspecialchars($row['Image'],ENT_QUOTES);
+    	
+    		echo"<div class='notes-indiv-container'>
+    		<a href='$url'><img class='notes-image' alt='$title' src='$img'/></a>
+    		<a href='$url'><h3 class='notes-title'>$title</h3></a>
+    		<p class='notes-time'>$timestamp</p>
+    		<a class='read-article' href='$url'>Read Notes</a>
+    		</div>";
+    	}
+    	
+        $r3 = $recs['Recom3'];
+	    $query = "SELECT * FROM `Notes` WHERE URL = '" . $r3 . "'";
+    	$notes = mysql_query($query);
+    	while($row = mysql_fetch_array($notes, MYSQL_ASSOC))
+    	{
+	    
+    		$date = $row['Date'];  		
+      		$timestamp = date("l jS F Y", strtotime($date));
+    		$title = htmlspecialchars($row['Title'],ENT_QUOTES);
+    		$author = htmlspecialchars($row['Author'],ENT_QUOTES);
+    		$url = htmlspecialchars($row['URL'],ENT_QUOTES);
+    		$desc = htmlspecialchars($row['Description'],ENT_QUOTES);
+    		$img = htmlspecialchars($row['Image'],ENT_QUOTES);
+    	
+    		echo"<div class='notes-indiv-container'>
+    		<a href='$url'><img class='notes-image' alt='$title' src='$img'/></a>
+    		<a href='$url'><h3 class='notes-title'>$title</h3></a>
+    		<p class='notes-time'>$timestamp</p>
+    		<a class='read-article' href='$url'>Read Notes</a>
+    		</div>";
+    	}
+	}
+	
+	mysql_close($con);
+
+?>
+
+<br />
+<h2>Recent Notes</h2>
+
+<?php
+	$con = mysql_connect("localhost","cthomp98_cmntr","TheCommenter");
+
+	if (!$con)
+	{
+		die('Could not connect: ' . mysql_error());
+	}
+
+	mysql_select_db("cthomp98_web_pages", $con);
+
+	$query = "SELECT * FROM `Notes` ORDER BY `Notes`.`ID` DESC LIMIT 3";
+
+	$notes = mysql_query($query);
+
+	while($row = mysql_fetch_array($notes, MYSQL_ASSOC))
+	{
+		$date = $row['Date'];  		
+  		$timestamp = date("l jS F Y", strtotime($date));
+		$title = htmlspecialchars($row['Title'],ENT_QUOTES);
+		$author = htmlspecialchars($row['Author'],ENT_QUOTES);
+		$url = htmlspecialchars($row['URL'],ENT_QUOTES);
+		$desc = htmlspecialchars($row['Description'],ENT_QUOTES);
+		$img = htmlspecialchars($row['Image'],ENT_QUOTES);
+	
+		echo"<div class='notes-indiv-container'>
+		<a href='$url'><img class='notes-image' alt='$title' src='$img'/></a>
+		<a href='$url'><h3 class='notes-title'>$title</h3></a>
+		<p class='notes-time'>$timestamp</p>
+		<a class='read-article' href='$url'>Read Notes</a>
+		</div>";
+	}
+
+	mysql_close($con);
+
+?>

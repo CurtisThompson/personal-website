@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+    	<title>Curtis Thompson - Week 7: Release Week</title>
+    	<link rel="stylesheet" type="text/css" href="/stylesheets/main.css" />
+    	<link rel="stylesheet" type="text/css" href="/stylesheets/notes.css" />
+    	<meta name="author" content="Curtis Thompson" />
+    	<meta name="description" content="This was the week of the release of the new website. The whole purpose of my work came down to this week. Everyone will see it... what could go wrong? In all honesty, I was actually pretty excited for this week." />
+    	<meta name="keywords" content="student union, website, content, assurance, executive, summer, week 7, web development" />
+		<?php include($_SERVER['DOCUMENT_ROOT'] . '/php-assets/core-header.php'); ?>
+    </head>
+    
+    
+    <body>
+		<?php include($_SERVER['DOCUMENT_ROOT'] . '/php-assets/menu.php'); ?>
+	
+		<div id="main-content">
+    		<h1 id="small-header-box">Week 7: Release Week</h1>
+    		<div class="notes-text">
+        		<div class="notes-details"><span class="author">Curtis Thompson</span><span class="date">Saturday 17th August 2019</span><span class="topic">Personal</span></div>		
+        		<p>This was the week of the release of the new website. The whole purpose of my work came down to this week. Everyone will see it... what could go wrong? In all honesty, I was actually pretty excited for this week.</p>
+        		<p>The Monday was dedicated to making sure the main pages of the website were ready for thousands of users to mess around with. We agreed last week that this day would be our final one to prepare the website. On this day I was checking through the main pages to check nothing is broken or out of place (including on mobile). If you know certain pages are going to viewed more than others, then this will help you prioritise. At the same time, I was able to check each image tag to make sure it had the alt attribute set (meeting one of those accessibility requirements).</p>
+        		<p>And then Monday evening, we are just waiting... The website is hosted by another company, but we are still able to edit and create everything we need. The transition of moving the development site to the live site is their responsibility, and we can only tell them when we want it to be done. It's a waiting game. But not waiting too long! The site is live Monday evening, and it's beautiful!</p>
+        		<p>Moving onto Tuesday, I get to go into work and talk about how the site looks amazing to my manager. But is this what everybody else thinks? The general feedback that we got (sorry I can't provide specific details or figures) is that compared to the existing site it is much easier to navigate, browse, and use. Now when my time here ends I know they will be looking more into the statistics of this, but the site has just gone live so it may not be possible right now.</p>
+        		<p>Better doesn't mean perfect though, and the rest of the week is dedicated to fixing issues that users find, or finishing off areas that we didn't have time to do before the website went live. This should be expected in any area of software development though. You can follow all the intricate plans you can conjure, but it is impossible to eliminate every bug and to cater for every individual taste. The important thing was there were no major bugs, and the issues we did get reported to us were very minor and easy to fix.</p>
+        	</div>
+            
+            <div class="notes-others">
+        		<?php include($_SERVER['DOCUMENT_ROOT'] . '/php-assets/other-notes.php'); ?>
+            </div>
+    	</div>
+		
+		<?php include($_SERVER['DOCUMENT_ROOT'] . '/php-assets/footer.php'); ?>
+    </body>
+
+</html>

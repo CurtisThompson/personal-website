@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    
+    <head>
+    	<title>Curtis Thompson - Scope and Lifetime of Variables</title>
+    	<link rel="stylesheet" type="text/css" href="/stylesheets/main.css" />
+    	<link rel="stylesheet" type="text/css" href="/stylesheets/notes.css" />
+    	<meta name="author" content="Curtis Thompson" />
+    	<meta name="description" content="Scope is an important concept in programming, and something that any good programmer will need to understand when creating a large (or even small) program. You are most likely to hear about scope when someone is talking about variables, and they may then bring up methods, classes and lifetime. For that reason I'll be focusing on the scope of variables." />
+    	<meta name="keywords" content="curtis, thompson, programming, variable, scope, lifetime, global, local, method, class, loop, declaration, java, c++, c#, computer science" />
+        <?php include($_SERVER['DOCUMENT_ROOT'] . '/php-assets/core-header.php'); ?>
+    </head>
+    
+    
+    <body>
+		<?php include($_SERVER['DOCUMENT_ROOT'] . '/php-assets/menu.php'); ?>
+	
+		<div id="main-content">
+    		<h1 id="small-header-box">Scope and Lifetime of Variables</h1>
+    		<div class="notes-text">
+        		<div class="notes-details"><span class="author">Curtis Thompson</span><span class="date">Wednesday 13th July 2016</span><span class="topic">Projects and Programming</span></div>
+    		
+        		<p>Scope is an important concept in programming, and something that any good programmer will need to understand when creating a large (or even small) program. You are most likely to hear about scope when someone is talking about variables, and they may then bring up methods, classes and lifetime. For that reason I'll be focusing on the scope of variables.</p>
+        		
+        		<p>The scope of a variable is the region of code where the variable can be accessed.</p>
+        		
+        		<div class="captioned-image">
+        			<img alt="Scope testing" src="ScopeTesting.png" />
+        			<p>An example of where different scopes effect the program.</p>
+        		</div>
+        		
+        		<p>The definition given above is very simple but scope can be broken down in more terms, and where a variable is declared will usually determine what scope it has. Variables can have global scope, meaning they can be accessed from anywhere in the program. They can also have class level scope, meaning they are accessible anywhere within a class. These class level scope variables are declared inside of a class but outside of any methods. To turn it into a global variable a keyword is usually added in the declaration - in Java the keyword is 'public'. Class level scope and global scope are often confused. They can mean the same thing if there is only one class but generally have different meanings.</p>
+        		
+        		<p>You also have local variables, which can only be accessed inside a certain block of code where they are declared. If they are declared inside a method they can be said to have method scope, so the variable can be used inside of the method. If they are specifically declared in a loop they are said to have loop scope. These are both examples of local scope and you will generally hear people just refer to local scope instead of the extra detail as it is obvious whether it is method or loop scope when you look at the code.</p>
+        		
+        		<p>In languages like C++ and Java, the scope of local variables is from declaration to the end of the block of code. In C# the scope of the local variable is the whole of the block in which the variable is declared, however a variable must still be declared before it can be used. This difference will not usually affect the program but can change a few things in complex circumstances.</p>
+        		
+        		<p>One other thing you may hear, I mentioned it earlier on, is lifetime. Lifetime of a variable and scope of a variable are often used interchangeably because they are very similar, but you will see from the definition that they are different.</p>
+        		
+        		<p>The lifetime of a variable is the amount of time a variable exists.</p>
+        		
+        		<p>Make sure you check out how to manage the scope of variables in your chosen programming language, it would be impossible for me to explain how to do it for every programming language here. But hopefully now you have an understanding of what the scope of a variable is, and you can impress your friends with your new programming knowledge.</p>
+        	</div>
+        	
+            <div class="notes-others">
+        		<?php include($_SERVER['DOCUMENT_ROOT'] . '/php-assets/other-notes.php'); ?>
+            </div>
+    	</div>
+		
+		<?php include($_SERVER['DOCUMENT_ROOT'] . '/php-assets/footer.php'); ?>
+    </body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    
+    <head>
+    	<title>Curtis Thompson - Lyric Analysis: Sing or Rap?</title>
+    	<link rel="stylesheet" type="text/css" href="/stylesheets/main.css" />
+    	<link rel="stylesheet" type="text/css" href="/stylesheets/notes.css" />
+    	<meta name="author" content="Curtis Thompson" />
+    	<meta name="description" content="In my personal opinion 2019 was a positive year, and it was getting even better as the year went on. But is there any way of measuring the positivity of my year through the vast amounts of data collected by the gadgets that I use? Perhaps I could look at my runs across the year and make the link that I run more on positive days, or an even more crazy assumption..." />
+    	<meta name="keywords" content="lyrics, rap, singing, sing, analysis, music, characters, lines, profanity, line endings, rhyming, logistic regression, machine learning" />
+		<?php include($_SERVER['DOCUMENT_ROOT'] . '/php-assets/core-header.php'); ?>
+    </head>
+
+
+    <body>
+		<?php include($_SERVER['DOCUMENT_ROOT'] . '/php-assets/menu.php'); ?>
+	
+		<div id="main-content">
+    		<h1 id="small-header-box">Lyric Analysis: Sing or Rap?</h1>
+    		<div class="notes-text">
+        		<div class="notes-details"><span class="author">Curtis Thompson</span><span class="date">Tuesday 31st March 2020</span><span class="topic">Lyrics and Music</span></div>
+        		<p>Should I sing my lyrics? Or should I rap them? For most songwriters this shouldn't even be a question they would consider. During the writing process they will already know whether the song is going to be sung or rapped. But it does raise a question, how do you know? Of course, if a rapper writes a song then it is likely to be rapped, but is it possible to determine whether a song should be sung or rapped by just looking at the lyrics?</p>
+
+                <p>The objective of this article is to build a machine learning classifier to classify between two classes ('sing' and 'rap'). The input to this classifier should only be textual lyrics. To make it more interesting I want to use as few features as possible, and these features should be simple to calculate. A feature with a quicker calculation time is what I consider simpler in this case.</p>
+                
+                <h2>Dataset</h2>
+                
+                <p>To train and evaluate my classifier I am using a dataset of lyrics scraped from Genius. Each set of lyrics is then hand-labelled as either 'sing' or 'rap' depending on whether singing or rapping constitutes more lines in the original release of the song (this criterion is important as covers of songs can be performed differently). My dataset contains 242 lyrics from 117 different artists. The number of lyrics is split equally between 'sing' and 'rap'.</p>
+                
+                <h2>Features</h2>
+                
+                <p>In Python, I have extracted eight different features: line count, character count, profanity count, profanity binary, characters per line, line endings 2, line endings 3, and line endings 4. The line ending features check the last c characters of consecutive lines and check whether they match, returning a count of the number of matching consecutive lines. The profanity count feature counts the occurrences of four profane words - 'fuck', 'nigga', 'bitch', and 'shit'.</p>
+                
+                <div class="captioned-image">
+        		    <img alt="Extracted feature graphs" src="features.png" />
+        		    <p>Features extracted and values in the dataset. Red represents 'rap' and blue represents 'sing'. The times for each graph represent the minimum time to calculate the feature for the whole dataset, across three trials.</p>
+        		</div>
+        		
+        		<p>Based on the graphs produced, character count appears to be the best single feature. It is calculated 6 times faster on my machine than the closest feature, and it separates the two classes very well with 'sing' scoring low while 'rap' scores high. Similarly, character per line provides a good separation between the two classes.</p>
+        		
+        		<p>The profanity count feature also separates well as only a few 'sing' data points actually contain profanity. Those that do have profanity are likely to only have a count of one, but the odd data point can be found to score higher. However, with the majority of the data points being void of profanity, the profanity binary feature may be useful in this classification problem.</p>
+                
+                <h2>Logistic Regression</h2>
+                
+                <p>I've chosen to use a logistic regression model to fit with my simplicity requirement. With logistic regression you are essentially calculating some parameters (the weights) to optimise the accuracy (or to minimise your loss function). Once trained, it should therefore be simple to recreate this model providing you know the weights (which are later in this article).</p>
+                
+                <p>To train this model I first need to pick which features I want to use. The features I want to use will be the ones which give me the best accuracy. I have chosen to use stratified three-fold cross validation, returning the average accuracy across these three folds. With this set up, I attempt every possible combination of the features.</p>
+                
+                <h2>Results</h2>
+                
+                <p>The best performing set of three features is lines, characters, and line endings 3 with a cross validation accuracy of 91.31%. This can be improved to 92.55% by adding the profanity binary feature to the model. The addition of this fourth feature does not greatly increase the feature calculation time as the line endings 3 feature already constituted a large majority of this time, so time is not an important factor in adding this feature.</p>
+                
+                <p>Since the line ending features take longer to calculate, it is important to consider models without them. In this case, the best model is made up of lines, characters, and profanity binary with a cross validation accuracy of 90.05%. Although the feature calculation time is improved, the accuracy drops by over 2%. In this case I have decided to settle with the model that uses the line ending feature.</p>
+                
+                <p>Settling for my model with the highest accuracy I have the following logistic regression coefficients; lines: 0.1916946, characters: -0.00605697, profanity binary: -1.10851435, line endings 3: -0.23771873. My intercept is 1.94826208. With these I now have a single equation to determine whether lyrics belong to 'sing' or 'rap'.</p>
+                
+                <div class="captioned-image">
+        		    <img alt="Equation for 'sing' or 'rap'" src="equation.png" />
+        		    <p>The final equation for calculating the probability that a set of lyrics belong to the 'rap' class.</p>
+        		</div>
+                
+                <p>I now have a simple equation that could be incorporated into any software or programming language to determine whether lyrics should be sung or rapped. There will be shortcomings to this equation as it was trained on a very small dataset and only uses four features. However, these features do examine text length, vocabulary, and estimate the frequency of rhymes. The equation could possibly be improved by using scaling - encountering values larger than those in the test set could easily result in a 'rap' prediction - particularly with the lind endings feature. But for a simple equation, it gets the job done!</p>
+        	</div>
+            
+            <div class="notes-others">
+        		<?php include($_SERVER['DOCUMENT_ROOT'] . '/php-assets/other-notes.php'); ?>
+            </div>
+    	</div>
+		
+		<?php include($_SERVER['DOCUMENT_ROOT'] . '/php-assets/footer.php'); ?>
+    </body>
+
+</html>

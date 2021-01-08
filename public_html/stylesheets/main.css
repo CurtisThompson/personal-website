@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css?family=B612:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Concert+One&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    color: #2a2a2a;
+    background-color: #f0f9ff;
+    font-size: 16px;
+    line-height: 1.5em;
+    font-family: 'B612', sans-serif;
+}
+
+.intro-text {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 1.5em;
+}
+
+/* Menu and Header */
+
+#header {
+    margin: 0;
+    padding: 0;
+}
+
+.header-width-container {
+    width: 80%;
+    max-width: 1100px;
+    display: block;
+    margin: auto;
+}
+
+#ct-header {
+    font-family: 'Concert One', cursive;
+    width: 100%;
+    display: block;
+    margin: 0;
+    padding: 0.5em 0;
+    font-weight: 900;
+    font-size: 35px;
+    height: 2em;
+    background: #54a0ac;
+}
+
+#ct-header a {
+    text-decoration: none;
+    color: black;
+    width: fit-content;
+    display: table;
+}
+
+#menu-mobile-button,
+#menu-mobile,
+#menu {
+    display: block;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: #017789;
+}
+
+#menu-mobile {
+    display: none;
+    background: #0090a6;
+}
+
+#menu-mobile-button {
+    display: none;
+    padding: 0.1em 0;
+    color: white;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+    #menu-mobile-button {
+        display: block;
+    }
+}
+
+#menu-mobile .menu-button,
+#menu .menu-button {
+    display: inline-block;
+    width: calc(25% - 10px);
+    padding: 0;
+    padding-top: 0.5em;
+    margin: 0;
+    text-align: center;
+}
+
+#menu-mobile .menu-button {
+    text-align: left;
+    width: 100%;
+}
+
+#menu-mobile .menu-button:hover,
+#menu .menu-button:hover {
+    background-color: #c4c6c9
+}
+
+#menu-mobile .menu-button h2,
+#menu .menu-button h2 {
+    margin: 0.5em 0;
+    color: white;
+}
+
+@media only screen and (max-width: 600px) {
+    #menu {
+        display: none;
+    }
+}
+
+/* Page Heading */
+ 
+#main-content {
+    width: 80%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+#small-header-box {
+    font-size: 35px;
+    line-height: 1em;
+    font-weight: 900;
+    text-align: center;
+    margin: 1em 0;
+}
+
+#main-content img {
+    max-width: 100%;
+}
+
+/* Footer */
+
+#footer {
+    background: #2a2a2a;
+    color: white;
+    margin: 0;
+    margin-top: 2em;
+    padding: 15px;
+    vertical-align: top;
+    font-size: 12px;
+    clear: both;
+}
+
+#footer .footer-width-container {
+    width: 80%;
+    max-width: 1100px;
+    display: block;
+    margin: auto;
+}
+
+#footer .footer-column {
+    width: calc(33% - 61px);
+    display: inline-block;
+    margin: 0 30px;
+    vertical-align: top;
+}
+
+#footer .footer-column:first-child {
+    margin: 0 30px 0 0;
+    width: calc(33% - 31px);
+}
+
+#footer .footer-column ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#footer .footer-column ul a {
+    text-decoration: none;
+    color: white;
+}
+
+#footer .footer-column ul a:hover {
+    text-decoration: underline;
+}
+
+#footer .copyright {
+    text-align: center;
+}
+
+@media only screen and (max-width: 700px) {
+    #footer {
+        font-size: 14px;
+    }
+
+    #footer .footer-column {
+        width: 100% !important;
+        margin: 0 !important;
+    }
+
+    #footer .footer-column li {
+        border-bottom: solid 1px #c4c6c9;
+        padding: 5px 0;
+    }
+}
+
+/* About */
+
+.about-text img {
+    width: 25%;
+    min-width: 300px;
+    float: left;
+    margin: 0 1em 1em 0;
+    border: solid 2px #2a2a2a
+}
+
+@media only screen and (max-width: 700px) {
+    .about-text img {
+        float: none;
+        width: 75%;
+        margin: auto;
+        display: block;
+        min-width: 0;
+    }
+}
+
+/* Pre and Post Main */
+#pre-main {
+	padding: 0;
+	margin: 0;
+	background-color: #54a0ac;
+	height: 10em;
+	width: 100%;
+}
+
+#post-main {
+	padding: 0;
+	margin: 0;
+	background-color: #2a2a2a;
+	height: 10em;
+	width: 100%;
+}
+
+#pre-main.loaded,
+#post-main.loaded {
+	width: inherit;
+	height: inherit;
+}

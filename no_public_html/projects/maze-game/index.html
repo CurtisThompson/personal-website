@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+	<head>
+		<head>
+		<title>Curtis Thompson - Maze Game</title>
+		<link rel="stylesheet" type="text/css" href="/stylesheets/main.css" />
+		<link rel="stylesheet" type="text/css" href="/stylesheets/projects.css" />
+		<meta name="author" content="Curtis Thompson" />
+		<meta name="description" content="Fives mazes, four enemies, free game! Work your way through the maze in as little moves as possible to earn yourself a medal, but you have to dodge the enemies who will try to hunt you down. Can you defeat the maze?" />
+		<meta name="keywords" content="curtis, thompson, maze game, pascal, program, programmer, student, college" />
+		
+
+		<script class="jquery-script" src="/js/jquery-3.2.0.js"></script>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-175187876-1"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+		  gtag('config', 'UA-175187876-1');
+		</script>
+
+		<meta charset="UTF-8" />
+		<meta name="theme-color" content="#54a0ac" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script>
+		$(function(){
+			$('#pre-main').load('/php-assets/menu.html');
+			$('#post-main').load('/php-assets/footer.html');
+			$('#pre-main').addClass('loaded');
+			$('#post-main').addClass('loaded');
+		});</script>
+		<script src="/js/spoiler-change.js"></script>
+	</head>
+	
+	
+	<body>
+		<div id="pre-main"></div>
+	
+		<div id="main-content">
+			<h1 id="small-header-box">Maze Game</h1>
+			
+			<div class="project-text-box">
+				<div class="info-row"><span class="info-head">Date</span><span class="info-body">October 2014</span></div>
+				<div class="info-row"><span class="info-head">Role</span><span class="info-body">Solo Project</span></div>
+				<div class="info-row"><span class="info-head">Technologies</span><span class="info-body">Pascal</span></div>
+				<div class="info-row"><span class="info-head">Description</span><span class="info-body">Fives mazes, four enemies, free game! Work your way through the maze in as little moves as possible to earn yourself a medal, but you have to dodge the enemies who will try to hunt you down. Can you defeat the maze?</span></div>
+			</div>
+			
+			<div class="project-text-box project-button-container">
+				<a href="MazeGame.exe" class="project-button download">Download</a>
+			</div>
+			
+			<div class="project-text-box project-image-container">
+			    <img src="maze-game-2.png" id="project-image" alt="Maze Game" />
+			</div>
+			
+			<div class="project-text-box">
+				<h2>Features</h2>
+				<ul>
+					<li>Five different mazes</li>
+					<li>Scoring and leaderboards</li>
+					<li>Randomly moving enemies</li>
+				</ul>
+			</div>
+			
+			<div class="project-text-box">
+				<h2>Questions</h2>
+				<div class="spoiler-button spoilerbutton">Hey, dude, where's the game?</div>
+				<div id="spoiler1" class="spoiler">The game was developed with Pascal and will only run as a Windows executable. Click the image to download the game. Sadly, Mac and geeky Linux users will not be able to run the game unless you run a virtual machine. Sorry.</div>
+				<div class="spoiler-button spoilerbutton">How do I play?</div>
+				<div id="spoiler2" class="spoiler">After the loading screen there will be a menu (and another if you want to choose your maze), use the number keys to select the menu option. You can then move around in the maze using the arrow keys.</div>
+				<div class="spoiler-button spoilerbutton"> Did you really make the game? It is the greatest game ever!</div>
+				<div id="spoiler3" class="spoiler">Yes, yes I did. In fact, a majority of the game was made in 4 hours on a Thursday afternoon with no planning. I just decided to make a maze game and threw random things into it. The UI, extra mazes and a scoring system were added later as well as an updated enemy AI to make them slightly smarter.</div>
+				<div class="spoiler-button spoilerbutton">Why did the game create some strange files?</div>
+				<div id="spoiler4" class="spoiler">Don't worry, they are used for the scoring system. You can open them up to see how harmless they are, although editing them could cause the game to crash so beware!</div>
+				<div class="spoiler-button spoilerbutton">Will you update the game?</div>
+				<div id="spoiler5" class="spoiler">Unless I get hundreds of requests I doubt it, this was only a small project to help me get used to programming in Pascal.</div>
+				<div class="spoiler-button spoilerbutton">How does the enemy AI work?</div>
+				<div id="spoiler6" class="spoiler">I was originally going to make the enemies similar to Pacman ghosts. I added four enemies and made them randomly decide on their next direction at every intersection. Since this was only a small project I never improved upon that but the enemies should give you enough of a challenge to make the game more interesting.</div>
+				<div class="spoiler-button spoilerbutton">Can I steal your game?</div>
+				<div id="spoiler7" class="spoiler">No! However if you want advice for your own games or to ask about mine you can contact me.</div>
+			</div>
+		</div>
+		
+		<div id="post-main"></div>
+	</body>
+</html>
