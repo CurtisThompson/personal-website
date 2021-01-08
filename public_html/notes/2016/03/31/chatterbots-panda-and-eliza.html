@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	
+	<head>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-175187876-1"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+		
+		  gtag('config', 'UA-175187876-1');
+		</script>
+		
+		<meta charset="UTF-8" />
+		<meta name="theme-color" content="#54a0ac" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="/js/jquery-3.2.0.js"></script>
+    	<title>Curtis Thompson - <!NOTETITLE!></title>
+		
+    	<link rel="stylesheet" type="text/css" href="/stylesheets/main.css" />
+    	<link rel="stylesheet" type="text/css" href="/stylesheets/notes.css" />
+    	<meta name="author" content="Curtis Thompson" />
+    	<meta name="description" content="Yesterday I thought it would be a fun idea to create a computer program which I could have a conversation with. These types of programs are known as chatterbots and creating one as intelligent as the famous Cleverbot or A.L.I.C.E would be an impossible task for one days work. The short time limit led me to look back at one simple program from the 1960's, ELIZA." />
+    	<meta name="keywords" content="curtis, thompson, panda, chatterbot, cleverbot, eliza, talking, computer, expert system, notes, source code" />
+
+	</head>
+	
+	<body>
+		<div id="header">
+			<div id="ct-header">
+				<div class="header-width-container">
+				    <a href="/"><p>Curtis Thompson</p></a>
+				</div>
+			</div>
+			<div id="menu">
+		        <div class="header-width-container">
+		        	<a href="/"><div class="menu-button">
+		        		<h2>Home</h2>
+		        	</div></a>
+		        	<a href="/projects"><div class="menu-button">
+		        		<h2>Projects</h2>
+		        	</div></a>
+		        	<a href="/about"><div class="menu-button">
+		        		<h2>About</h2>
+		        	</div></a>
+		        	<a href="/notes"><div class="menu-button">
+		        		<h2>Notes</h2>
+		        	</div></a>
+		        </div>
+		    </div>
+			<div id="menu-mobile-button"><div class="header-width-container"><h2>&#9776; Menu</h2></div></div>
+			<div id="menu-mobile">
+			    <div class="header-width-container">
+		    		<a href="/"><div class="menu-button">
+		    			<h2>Home</h2>
+		    		</div></a>
+		    		<a href="/projects"><div class="menu-button">
+		    			<h2>Projects</h2>
+		    		</div></a>
+		    		<a href="/about"><div class="menu-button">
+		    			<h2>About</h2>
+		    		</div></a>
+		    		<a href="/notes"><div class="menu-button">
+		    			<h2>Notes</h2>
+		    		</div></a>
+		    	</div>
+			</div>
+		    <script src="/js/mobile-menu.js"></script>
+		</div>
+	
+		<div id="main-content">
+    		<h1 id="small-header-box"><!NOTETITLE!></h1>
+    		<div class="notes-text">
+        		<div class="notes-details">
+					<span class="author"><!NOTEAUTHOR!></span>
+					<span class="date">Thursday 31st March 2016</span>
+					<span class="topic">Artificial Intelligence</span>
+				</div>
+        		
+        		
+        		<p>Yesterday I thought it would be a fun idea to create a computer program which I could have a conversation with. These types of programs are known as chatterbots and creating one as intelligent as the famous Cleverbot or A.L.I.C.E would be an impossible task for one days work. The short time limit led me to look back at one simple program from the 1960's, ELIZA.</p>
+        		<p>ELIZA is one of the first chatterbots, created by Joseph Weizenbaum between 1964 and 1966. It is a very simple expert system chatterbot that searches for keywords and then gets phrases from the user's responses (depending on the keyword), combining these with its own pre-programmed phrases so it can reply. This sounded easy, and looked even easier when I found a 260 line source code in BASIC for an early version of ELIZA. I therefore decided to write my own version of ELIZA based on this source code and other information about ELIZA.</p>
+        		
+        		<div class="captioned-image">
+        			<img alt="ELIZA" src="eliza-conversation.png" />
+        			<p>A conversation between a user and ELIZA.</p>
+        		</div>
+        		
+        		<p>To write my chatterbot I would have to write a few small functions:</p>
+        		<ul>
+        			<li>Finding keywords in user's responses</li>
+        			<li>Getting phrases out of user's responses</li>
+        			<li>Replacing pronouns (and other words) in phrases</li>
+        			<li>Choosing and combining phrases to make the chatterbot reply</li>
+        		</ul>
+        		<p>My chatterbot, like ELIZA, does not learn new keywords and phrases over time so these must all be programmed into my chatterbot from the start. A majority of keywords I chose were similar to keywords used by ELIZA or are simple keywords that people often use in everyday speech such as "I have", "yes" and "think". Along with each of these keywords I had to write a few possible phrases the chatterbot could use in reply to them and denote whether these phrases should be combined with phrases gathered from the user.</p>
+        		<p>Once the keywords and phrases were chosen I could start programming. I chose C# for this simply because I hadn't used C# for a while, this program would be simple enough that I didn't need to care about which programming language to use. The program had to get the user's input, search for keywords with IF... ELSE IF... statements, find and combine phrases, and then output the chatterbots reply. This would be repeated continuously.</p>
+        		
+        		<div class="captioned-image">
+        			<img alt="Flowchart of Panda logic" src="panda-flowchart.png" />
+        			<p>A flowchart showing how the chatterbot decides what to say.</p>
+        		</div>
+        		
+        		<p>Once this was done I had a working chatterbot! However there were two main problems I had not yet addressed; pronouns not being replaced and how to handle user responses with no keywords. Writing the function for pronoun replacement was simple as I could use the same replacements that ELIZA used, looping through these replacements to make the phrases make sense. Handling responses with no keywords was also not too difficult. If the response had a question mark the chatterbot could prompt for a different question or topic, otherwise it would use very short generic replies such as "yeah" or "ummmm...". With this completed the chatterbot was essentially complete. I called it Panda!</p>
+        		<p>Simple chatterbots like Panda and ELIZA do not learn, they can only work with what they are given at the start. Besides giving it the ability to learn there are many possible improvements to the program. One would be to have more keywords and phrases that it can search for and use, making the conversations more in depth or complex. Another would be giving the program a 'memory', so that if the user provides some information the program can continue to refer back to that piece of information. A third idea would be to improve the searching algorithms so that the program can create better responses. Like most AI programs, the potential improvements are endless.</p>
+        		
+        		<div class="captioned-image">
+        			<img alt="Conversation with Pandas" src="panda-chatterbot.png" />
+        			<p>A conversation with Panda, the completed chatterbot.</p>
+        		</div>
+        		
+        		<p>This is just one of the ways of creating a chatterbot, and one of the quickest I could find. The possibilities are nearly endless with this. If you want to see the C# code I used for Panda, it can all be found in <a href="https://github.com/CurtisThompson/panda-chatterbot">this repository.</a> If you want more information on ELIZA, <a href="http://www.cse.buffalo.edu/~rapaport/572/S02/weizenbaum.eliza.1966.pdf">this paper by Joseph Weizenbaum</a> will help. And finally, <a href="http://www.cwthompson.com/panda-chatterbot">click here to see the project</a>. I'd love to see people create their own, more advanced, versions.</p>	
+
+        	</div>
+            
+            <div class="notes-others">
+        		
+            </div>
+    	</div>
+		
+		<div id="footer">
+		    <div class="footer-width-container">
+		        <div class="footer-column">
+		            <h2>Curtis Thompson</h2>
+		            <p>Well, let me just say a few words about myself... I'm a Computer Science student at the University of Warwick, interested in taking on new challenges. Hopefully you can see that through the projects and notes on my website.</p>
+		        </div>
+		        
+		        <div class="footer-column">
+		            <h2>Menu</h2>
+		            <ul>
+		                <li><a href="/">Home</a></li>
+		                <li><a href="/projects/">Projects</a></li>
+		                <li><a href="/about/">About</a></li>
+		                <li><a href="/notes/">Notes</a></li>
+		            </ul>
+		        </div>
+		        
+		        <div class="footer-column">
+		            <h2>Get In Touch</h2>
+		            <ul>
+		                <li class="website"><a href="/">www.cwthompson.com</a></li>
+		                <li class="linkedin"><a href="https://www.linkedin.com/in/curtis-comp-sci" target="_blank">LinkedIn</a></li>
+		                <li class="kaggle"><a href="https://www.kaggle.com/cwthompson" target="_blank">Kaggle</a></li>
+		                <li class="github"><a href="https://github.com/CurtisThompson/" target="_blank">GitHub</a></li>
+		            </ul>
+		        </div>
+		        
+		        <p class="copyright">&copy; 2015-2021 Curtis Thompson</p>
+		    </div>
+		</div>
+	</body>
+	
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	
+	<head>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-175187876-1"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+		
+		  gtag('config', 'UA-175187876-1');
+		</script>
+		
+		<meta charset="UTF-8" />
+		<meta name="theme-color" content="#54a0ac" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="/js/jquery-3.2.0.js"></script>
+    	<title>Curtis Thompson - <!NOTETITLE!></title>
+		
+    	<link rel="stylesheet" type="text/css" href="/stylesheets/main.css" />
+    	<link rel="stylesheet" type="text/css" href="/stylesheets/notes.css" />
+    	<meta name="author" content="Curtis Thompson" />
+    	<meta name="description" content="You may have read my recent article in which I discussed simple possibilities to implement an AI systm into a game of blackjack that the player could play against. With my player versus computer version of blackjack already made, today I set out to implement one of these methods and see how well the computer would learn to play.</" />
+    	<meta name="keywords" content="curtis, thompson, programming, java, ai, artificial intelligence, blackjack, 21, pontoon, learning, dealer, learn, probability, computer, university, cards, counting, code, program" />
+
+	</head>
+	
+	<body>
+		<div id="header">
+			<div id="ct-header">
+				<div class="header-width-container">
+				    <a href="/"><p>Curtis Thompson</p></a>
+				</div>
+			</div>
+			<div id="menu">
+		        <div class="header-width-container">
+		        	<a href="/"><div class="menu-button">
+		        		<h2>Home</h2>
+		        	</div></a>
+		        	<a href="/projects"><div class="menu-button">
+		        		<h2>Projects</h2>
+		        	</div></a>
+		        	<a href="/about"><div class="menu-button">
+		        		<h2>About</h2>
+		        	</div></a>
+		        	<a href="/notes"><div class="menu-button">
+		        		<h2>Notes</h2>
+		        	</div></a>
+		        </div>
+		    </div>
+			<div id="menu-mobile-button"><div class="header-width-container"><h2>&#9776; Menu</h2></div></div>
+			<div id="menu-mobile">
+			    <div class="header-width-container">
+		    		<a href="/"><div class="menu-button">
+		    			<h2>Home</h2>
+		    		</div></a>
+		    		<a href="/projects"><div class="menu-button">
+		    			<h2>Projects</h2>
+		    		</div></a>
+		    		<a href="/about"><div class="menu-button">
+		    			<h2>About</h2>
+		    		</div></a>
+		    		<a href="/notes"><div class="menu-button">
+		    			<h2>Notes</h2>
+		    		</div></a>
+		    	</div>
+			</div>
+		    <script src="/js/mobile-menu.js"></script>
+		</div>
+	
+		<div id="main-content">
+    		<h1 id="small-header-box"><!NOTETITLE!></h1>
+    		<div class="notes-text">
+        		<div class="notes-details">
+					<span class="author"><!NOTEAUTHOR!></span>
+					<span class="date">Monday 12th September 2016</span>
+					<span class="topic">Artificial Intelligence</span>
+				</div>
+        		
+        		
+        		<p>You may have read my recent article in which I discussed simple possibilities to implement an AI system into a game of blackjack that the player could play against. With my player versus computer version of blackjack already made, today I set out to implement one of these methods and see how well the computer would learn to play.</p>
+        		
+        		<div class="captioned-image">
+        			<img alt="Computer playing blackjack" src="SmartAI.png" />
+        			<p>After many games, the computer could win almost half of its games.</p>
+        		</div>
+        		
+        		<p>My idea was to allow the computer to learn how to play by seeing each hand that it played and the player played, and then determining whether it was a good hand or not by seeing if the following card made that hand go bust. The computer would understand the concept of going bust, but not about winning against the player. This was to simplify the code, as mentioned in the previous article. I added two arrays, one to count how many times a specific score had been seen (for example an Ace and a King would give a score of 21), and the other to count how many times that hand was safe (not going bust). The computer would use the two values to decide whether or not it should have another card.</p>
+        		
+        		<div class="captioned-image">
+        			<img alt="Blackjack results" src="BlackjackResults.png">
+        			<p>Splitting results into sets of tens shows the progress that the computer made.</p>
+        		</div>
+        		
+        		<p>Initially, with a lack of data to use, the computer was not very good at the game. Early on the computer decided to take another card even though it had a very good score of 20. At that point, the computer had never seen a score of 20 so did not know whether it was a good score - and therefore took another card. Early on the computer was going bust regularly as it was seeing new scores that it had never seen before. This made it easy for me, the player, to win each game. Occasionally, the computer would encounter a great score that it had only seen once or twice, and would choose not the take another card, allowing it to win the game. This is not very common though, and it was losing far more games than it was winning.</p>
+        		<p>As the game went on, the computer got better. It was a very quick increase in skill actually. With scores of 18, 19 and 20 the computer was sticking a lot, but with scores that were slightly lower (such as 14, 15, 16) the computer was changing its tactic frequently. It is quite common for human players to do this too in they are not expert blackjack players, so this was expected. This actually helped the computer to win more games. After approximately 40 games, the computer was winning 3 in 10 games against me, a respectable win rate. At its best it was winning over half of the games that it played. Overall, the computer seemed to be learning to play the game very well, this simple implementation of an AI system was working.</p>
+        		<p>This method was not perfect. The computer would still make mistakes in places that humans would almost never make mistakes. This may partly be down to the programming, adding a few more lines of code to deal with the way it learns in specific cases would improve the AI even more. The concept of learning from the player is also not perfect, as playing against a weak player will not allow the computer to learn to play very well, and would cause the computer to learn bad practices which would be hard to remove if it had used them in many games. However, the basics of the method were successful, and the computer did learn to win at blackjack against a real player. Improvements can always be made, but I feel as if I have accomplished what I set out in the previous article.</p>
+
+        	</div>
+            
+            <div class="notes-others">
+        		
+            </div>
+    	</div>
+		
+		<div id="footer">
+		    <div class="footer-width-container">
+		        <div class="footer-column">
+		            <h2>Curtis Thompson</h2>
+		            <p>Well, let me just say a few words about myself... I'm a Computer Science student at the University of Warwick, interested in taking on new challenges. Hopefully you can see that through the projects and notes on my website.</p>
+		        </div>
+		        
+		        <div class="footer-column">
+		            <h2>Menu</h2>
+		            <ul>
+		                <li><a href="/">Home</a></li>
+		                <li><a href="/projects/">Projects</a></li>
+		                <li><a href="/about/">About</a></li>
+		                <li><a href="/notes/">Notes</a></li>
+		            </ul>
+		        </div>
+		        
+		        <div class="footer-column">
+		            <h2>Get In Touch</h2>
+		            <ul>
+		                <li class="website"><a href="/">www.cwthompson.com</a></li>
+		                <li class="linkedin"><a href="https://www.linkedin.com/in/curtis-comp-sci" target="_blank">LinkedIn</a></li>
+		                <li class="kaggle"><a href="https://www.kaggle.com/cwthompson" target="_blank">Kaggle</a></li>
+		                <li class="github"><a href="https://github.com/CurtisThompson/" target="_blank">GitHub</a></li>
+		            </ul>
+		        </div>
+		        
+		        <p class="copyright">&copy; 2015-2021 Curtis Thompson</p>
+		    </div>
+		</div>
+	</body>
+	
+</html>

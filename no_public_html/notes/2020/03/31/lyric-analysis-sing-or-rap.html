@@ -1,26 +1,21 @@
-<!DOCTYPE html>
+<!NOTETITLE!>Lyric Analysis: Sing or Rap?<!NOTETITLE!>
 
-<html lang="en">
-    
-    <head>
-    	<title>Curtis Thompson - Lyric Analysis: Sing or Rap?</title>
+<!NOTEAUTHOR!>Curtis Thompson<!NOTEAUTHOR!>
+
+<!NOTEDATE!>Tuesday 31st March 2020<!NOTEDATE!>
+
+<!NOTETOPIC!>Lyrics and Music<!NOTETOPIC!>
+
+<!HEADCONTENT!>
     	<link rel="stylesheet" type="text/css" href="/stylesheets/main.css" />
     	<link rel="stylesheet" type="text/css" href="/stylesheets/notes.css" />
     	<meta name="author" content="Curtis Thompson" />
     	<meta name="description" content="In my personal opinion 2019 was a positive year, and it was getting even better as the year went on. But is there any way of measuring the positivity of my year through the vast amounts of data collected by the gadgets that I use? Perhaps I could look at my runs across the year and make the link that I run more on positive days, or an even more crazy assumption..." />
     	<meta name="keywords" content="lyrics, rap, singing, sing, analysis, music, characters, lines, profanity, line endings, rhyming, logistic regression, machine learning" />
-		<?php include($_SERVER['DOCUMENT_ROOT'] . '/php-assets/core-header.php'); ?>
-    </head>
+<!HEADCONTENT!>
 
-
-    <body>
-		<?php include($_SERVER['DOCUMENT_ROOT'] . '/php-assets/menu.php'); ?>
-	
-		<div id="main-content">
-    		<h1 id="small-header-box">Lyric Analysis: Sing or Rap?</h1>
-    		<div class="notes-text">
-        		<div class="notes-details"><span class="author">Curtis Thompson</span><span class="date">Tuesday 31st March 2020</span><span class="topic">Lyrics and Music</span></div>
-        		<p>Should I sing my lyrics? Or should I rap them? For most songwriters this shouldn't even be a question they would consider. During the writing process they will already know whether the song is going to be sung or rapped. But it does raise a question, how do you know? Of course, if a rapper writes a song then it is likely to be rapped, but is it possible to determine whether a song should be sung or rapped by just looking at the lyrics?</p>
+<!BODYCONTENT!>
+				<p>Should I sing my lyrics? Or should I rap them? For most songwriters this shouldn't even be a question they would consider. During the writing process they will already know whether the song is going to be sung or rapped. But it does raise a question, how do you know? Of course, if a rapper writes a song then it is likely to be rapped, but is it possible to determine whether a song should be sung or rapped by just looking at the lyrics?</p>
 
                 <p>The objective of this article is to build a machine learning classifier to classify between two classes ('sing' and 'rap'). The input to this classifier should only be textual lyrics. To make it more interesting I want to use as few features as possible, and these features should be simple to calculate. A feature with a quicker calculation time is what I consider simpler in this case.</p>
                 
@@ -61,14 +56,4 @@
         		</div>
                 
                 <p>I now have a simple equation that could be incorporated into any software or programming language to determine whether lyrics should be sung or rapped. There will be shortcomings to this equation as it was trained on a very small dataset and only uses four features. However, these features do examine text length, vocabulary, and estimate the frequency of rhymes. The equation could possibly be improved by using scaling - encountering values larger than those in the test set could easily result in a 'rap' prediction - particularly with the lind endings feature. But for a simple equation, it gets the job done!</p>
-        	</div>
-            
-            <div class="notes-others">
-        		<?php include($_SERVER['DOCUMENT_ROOT'] . '/php-assets/other-notes.php'); ?>
-            </div>
-    	</div>
-		
-		<?php include($_SERVER['DOCUMENT_ROOT'] . '/php-assets/footer.php'); ?>
-    </body>
-
-</html>
+<!BODYCONTENT!>

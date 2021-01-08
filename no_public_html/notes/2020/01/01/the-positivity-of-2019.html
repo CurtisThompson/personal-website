@@ -1,26 +1,21 @@
-<!DOCTYPE html>
+<!NOTETITLE!>The Positivity of 2019 (Through The Lens of Facebook Messenger)<!NOTETITLE!>
 
-<html lang="en">
-    
-    <head>
-    	<title>Curtis Thompson - The Positivity of 2019</title>
+<!NOTEAUTHOR!>Curtis Thompson<!NOTEAUTHOR!>
+
+<!NOTEDATE!>Wednesday 1st January 2020<!NOTEDATE!>
+
+<!NOTETOPIC!>Personal<!NOTETOPIC!>
+
+<!HEADCONTENT!>
     	<link rel="stylesheet" type="text/css" href="/stylesheets/main.css" />
     	<link rel="stylesheet" type="text/css" href="/stylesheets/notes.css" />
     	<meta name="author" content="Curtis Thompson" />
     	<meta name="description" content="In my personal opinion 2019 was a positive year, and it was getting even better as the year went on. But is there any way of measuring the positivity of my year through the vast amounts of data collected by the gadgets that I use? Perhaps I could look at my runs across the year and make the link that I run more on positive days, or an even more crazy assumption..." />
     	<meta name="keywords" content="2019, valence, positivity, emojis, facebook, messenger, vader, messages, grinning face with smiling eyes" />
-		<?php include($_SERVER['DOCUMENT_ROOT'] . '/php-assets/core-header.php'); ?>
-    </head>
+<!HEADCONTENT!>
 
-
-    <body>
-		<?php include($_SERVER['DOCUMENT_ROOT'] . '/php-assets/menu.php'); ?>
-	
-		<div id="main-content">
-    		<h1 id="small-header-box">The Positivity of 2019 (Through The Lens of Facebook Messenger)</h1>
-    		<div class="notes-text">
-        		<div class="notes-details"><span class="author">Curtis Thompson</span><span class="date">Wednesday 1st January 2020</span><span class="topic">Personal</span></div>		
-        		<p>In my personal opinion 2019 was a positive year, and it was getting even better as the year went on. But is there any way of measuring the positivity of my year through the vast amounts of data collected by the gadgets that I use? Perhaps I could look at my runs across the year and make the link that I run more on positive days, or an even more crazy assumption would be that I play my Nintendo Switch on less positive days. But there is something I've used throughout the year to express my emotions... emojis!</p>
+<!BODYCONTENT!>
+				<p>In my personal opinion 2019 was a positive year, and it was getting even better as the year went on. But is there any way of measuring the positivity of my year through the vast amounts of data collected by the gadgets that I use? Perhaps I could look at my runs across the year and make the link that I run more on positive days, or an even more crazy assumption would be that I play my Nintendo Switch on less positive days. But there is something I've used throughout the year to express my emotions... emojis!</p>
         		<p>In this article I use the data from Facebook Messenger to measure how my positivity has changed over 2019. This data can be downloaded directly from Facebook in either a HTML or JSON format. For this analysis I downloaded my 2019 messages in HTML format and used the Beautiful Soup library to extract information - then performing the analysis in Python.</p>
         		<p>I used 74 different emojis 4665 times in 2019, but which emoji was my favourite? 'Grinning Face With Smiling Eyes' was my most used emoji with 1011 uses, accounting for 21.67% of all uses of emojis. This was then followed by 'Grinning Squinting Face' with 695 uses and 'Smiling Face With Smiling Eyes' with 639 uses. My most frequently used emojis are shown in the figure below.</p>
         		<div class="captioned-image">
@@ -46,14 +41,4 @@
         	    <p>Over the course of the year my messages are positive, but the positivity stays relatively constant throughout the year. On the other hand, the number of emojis per message increases over the course of the year. A linear regression model fitted for emoji usage against message positivity does however suggest a positive trend. That is to say that positive messages are more likely to use more emojis. So it may be that instead of using negative emojis I am just using fewer emojis, but the analysis is inconclusive.</p>
         	    <p>The overall analysis seems to suggest that I mostly use positive emojis. My usage of positive emojis, and emojis overall, increased over the course of the year. The positivity of my messages was positive, but did not increase over the course of the year. However, there does seem to be a link between the positivity of messages and the use of emojis. This final statement does need more exploration.</p>
         	    <p>Most importantly... has 2019 been a positive year? Yes!</p>
-        	</div>
-            
-            <div class="notes-others">
-        		<?php include($_SERVER['DOCUMENT_ROOT'] . '/php-assets/other-notes.php'); ?>
-            </div>
-    	</div>
-		
-		<?php include($_SERVER['DOCUMENT_ROOT'] . '/php-assets/footer.php'); ?>
-    </body>
-
-</html>
+<!BODYCONTENT!>

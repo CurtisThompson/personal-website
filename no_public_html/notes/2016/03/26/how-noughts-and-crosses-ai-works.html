@@ -1,26 +1,20 @@
-<!DOCTYPE html>
+<!NOTETITLE!>How The Noughts And Crosses AI Works<!NOTETITLE!>
 
-<html lang="en">
+<!NOTEAUTHOR!>Curtis Thompson<!NOTEAUTHOR!>
 
-    <head>
-    	<title>Curtis Thompson - How The Noughts And Crosses AI Works</title>
+<!NOTEDATE!>Saturday 26th March 2016<!NOTEDATE!>
+
+<!NOTETOPIC!>Artificial Intelligence<!NOTETOPIC!>
+
+<!HEADCONTENT!>
     	<link rel="stylesheet" type="text/css" href="/stylesheets/main.css" />
     	<link rel="stylesheet" type="text/css" href="/stylesheets/notes.css" />
     	<meta name="author" content="Curtis Thompson" />
     	<meta name="description" content="A perfect player of noughts and crosses can never lose, only win or draw. Developing computer software that can play perfectly is a simple task and there are several methods to achieve this. On my website you will be able to find two noughts and crosses applications which both use a different method for their artificial intelligence. The application I developed with Delphi uses a very popular algorithm called the minimax algorithm." />
     	<meta name="keywords" content="curtis, thompson, noughts and crosses, tic tac toe, x, o, perfect, flash, game, programmer, student, portfolio, how it works" />
-        <?php include($_SERVER['DOCUMENT_ROOT'] . '/php-assets/core-header.php'); ?>
-    </head>
-    
-    
-    <body>
-    	<?php include($_SERVER['DOCUMENT_ROOT'] . '/php-assets/menu.php'); ?>
-	
-		<div id="main-content">
-    		<h1 id="small-header-box">How The Noughts And Crosses AI Works</h1>
-    		<div class="notes-text">
-        		<div class="notes-details"><span class="author">Curtis Thompson</span><span class="date">Saturday 26th March 2016</span><span class="topic">Artificial Intelligence</span></div>
-    		
+<!HEADCONTENT!>
+
+<!BODYCONTENT!>
         		<p>A perfect player of noughts and crosses can never lose, only win or draw. Developing computer software that can play perfectly is a simple task and there are several methods to achieve this. On my website you will be able to find two noughts and crosses applications which both use a different method for their artificial intelligence. The application I developed with Delphi uses a very popular algorithm called the minimax algorithm.</p>
         		<p>The purpose of the minimax algorithm is to minimise the possible loss for a maximum loss scenario, hence the name. The computer player will look through the game tree at each possible move to see the eventual outcome of the combination of moves played by the human and computer, with both trying to win. Using a heuristic evaluation function it will determine a value for each leaf node (a node which results in gameover) and then return the value to a parent node. The parent node will compare the values and either select the minimum or maximum value depending on whose turn it is on that node. It will then return it's value to it's parent node, continuing this until the first node is reached. After this the minimax algorithm will have decided the move to play.</p>
         		
@@ -56,14 +50,4 @@
         		
         		<p>The starting move and the second player's reaction to it are important as they can often determine if a player can win the game. For the starting player to remain in control of the game they must play in the centre square or one of the corner squares. If the starting player plays in the centre, the reaction should be to play in a corner square to be able to stop a fork in later moves. If the starting player plays in the corner, the reaction should be to play in the centre to be able to stop a fork in later moves. If the starting player plays on a side square, the reaction should be to play in the centre square as that will allow to second player to take advantage of the game. The starting moves are critical for determining the eventual winner.</p>
         		<p>Overall, both algorithms are simple to apply to noughts and crosses. The Simon and Newell algorithm is only applicable to noughts and crosses as the computer follows a list of simple instructions that can only be applied to the game, however the minimax algorithm could be applied to a wide variety of games or situations providing the heuristics evaluation function is adapted to the purpose. It is an interesting algorithm, one that provides a fundamental view to artificial intelligence.</p>
-        	</div>
-        	
-            <div class="notes-others">
-        		<?php include($_SERVER['DOCUMENT_ROOT'] . '/php-assets/other-notes.php'); ?>
-            </div>
-    	</div>
-		
-		<?php include($_SERVER['DOCUMENT_ROOT'] . '/php-assets/footer.php'); ?>
-    </body>
-
-</html>
+<!BODYCONTENT!>

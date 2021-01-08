@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	
+	<head>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-175187876-1"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+		
+		  gtag('config', 'UA-175187876-1');
+		</script>
+		
+		<meta charset="UTF-8" />
+		<meta name="theme-color" content="#54a0ac" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="/js/jquery-3.2.0.js"></script>
+    	<title>Curtis Thompson - <!NOTETITLE!></title>
+		
+    	<link rel="stylesheet" type="text/css" href="/stylesheets/main.css" />
+    	<link rel="stylesheet" type="text/css" href="/stylesheets/notes.css" />
+    	<meta name="author" content="Curtis Thompson" />
+    	<meta name="description" content="This week I started with Warwick Students' Union as a Website Content Assurance Executive. I'll only be working with them for a few weeks as they finalise their new website, as I check the site to make sure everything is ready to go live." />
+    	<meta name="keywords" content="student union, website, content, assurance, exective, absolute links, job, internship, summer, week 1, web development, css, html, javascript" />
+
+	</head>
+	
+	<body>
+		<div id="header">
+			<div id="ct-header">
+				<div class="header-width-container">
+				    <a href="/"><p>Curtis Thompson</p></a>
+				</div>
+			</div>
+			<div id="menu">
+		        <div class="header-width-container">
+		        	<a href="/"><div class="menu-button">
+		        		<h2>Home</h2>
+		        	</div></a>
+		        	<a href="/projects"><div class="menu-button">
+		        		<h2>Projects</h2>
+		        	</div></a>
+		        	<a href="/about"><div class="menu-button">
+		        		<h2>About</h2>
+		        	</div></a>
+		        	<a href="/notes"><div class="menu-button">
+		        		<h2>Notes</h2>
+		        	</div></a>
+		        </div>
+		    </div>
+			<div id="menu-mobile-button"><div class="header-width-container"><h2>&#9776; Menu</h2></div></div>
+			<div id="menu-mobile">
+			    <div class="header-width-container">
+		    		<a href="/"><div class="menu-button">
+		    			<h2>Home</h2>
+		    		</div></a>
+		    		<a href="/projects"><div class="menu-button">
+		    			<h2>Projects</h2>
+		    		</div></a>
+		    		<a href="/about"><div class="menu-button">
+		    			<h2>About</h2>
+		    		</div></a>
+		    		<a href="/notes"><div class="menu-button">
+		    			<h2>Notes</h2>
+		    		</div></a>
+		    	</div>
+			</div>
+		    <script src="/js/mobile-menu.js"></script>
+		</div>
+	
+		<div id="main-content">
+    		<h1 id="small-header-box"><!NOTETITLE!></h1>
+    		<div class="notes-text">
+        		<div class="notes-details">
+					<span class="author"><!NOTEAUTHOR!></span>
+					<span class="date">Saturday 6th July 2019</span>
+					<span class="topic">Personal</span>
+				</div>
+        		
+        		
+        		<p>This week I started with Warwick Students' Union as a Website Content Assurance Executive. I'll only be working with them for a few weeks as they finalise their new website, as I check the site to make sure everything is ready to go live.</p>
+        		<p>Checking a site is ready to go live, what does this mean? I'll be checking that all scripts are working, all links lead to other pages (as opposed to 404ing), and all pages match the agreed designs. Obviously there is a lot more to check, there are so many different things that I possibly couldn't list them all now. However, it is essentially my job to make sure everything is perfect. And that is what I have already started doing.</p>
+        		<p>One of my first tasks (once I got through all of the HR induction stuff) was to make a particular page look like the mockup design. As the template had been coded before I began the job, it wasn't too difficult. The main issue was the side navigation bar, as several buttons were not displaying while others were directing users to the live site (as opposed to the dev site that we were working on). Directing to the live site is a problem as directories of the new site have changed so when the new site goes live, all of these links will 404. This is why it is good to use relative links as opposed to absolute links, and why I need to fix it.</p>
+        		<p>I explored the buttons, and found they were using absolute redirects. This idea led me to find bigger issues. I checked other redirects on the website, and they were absolute too - leading to the live site. Big issue! So I spent a few hours going through the redirects, trying to fix them. Overall I found that 65% of the redirects needed to be changed, and there was also 7% that couldn't be changed due to the restructuring of the new site - they had to be deleted or flagged up in a report. Most importantly, the navigation bar was fixed.</p>
+        		<p>As my first week progressed, I moved onto different jobs. I had been given some deadlines, and had to prioritise my work to ensure everything could get done. These tasks included restructuring sections, applying styling, and quality checking pages. Although the site was mostly fine, there were a few recurring issues:</p>
+        		<ul>
+        		    <li>Headings (h1, h2, h3, ...) had no consistency in their application</li>
+        		    <li>Paragraphs (p) were being used to create lists, as opposed to the list tags (ul, ol, li)</li>
+        		    <li>Images were not resizing when the device or browser resized, mostly causing issues on mobile</li>
+        		</ul>
+        		<p>Issues that I couldn't fix were flagged up in reports. I found it fun to fix bugs, so would try to do so myself if it wouldn't take hours to figure it out. Obviously those that I had listed above were ones I could fix, but there were some more complex scripting issues that I decided to flag up so that the main web developer could fix them instead. Next week I will be doing more coding myself, but it was a good first week that allowed me to get used to the system and my job.</p>
+
+        	</div>
+            
+            <div class="notes-others">
+        		
+            </div>
+    	</div>
+		
+		<div id="footer">
+		    <div class="footer-width-container">
+		        <div class="footer-column">
+		            <h2>Curtis Thompson</h2>
+		            <p>Well, let me just say a few words about myself... I'm a Computer Science student at the University of Warwick, interested in taking on new challenges. Hopefully you can see that through the projects and notes on my website.</p>
+		        </div>
+		        
+		        <div class="footer-column">
+		            <h2>Menu</h2>
+		            <ul>
+		                <li><a href="/">Home</a></li>
+		                <li><a href="/projects/">Projects</a></li>
+		                <li><a href="/about/">About</a></li>
+		                <li><a href="/notes/">Notes</a></li>
+		            </ul>
+		        </div>
+		        
+		        <div class="footer-column">
+		            <h2>Get In Touch</h2>
+		            <ul>
+		                <li class="website"><a href="/">www.cwthompson.com</a></li>
+		                <li class="linkedin"><a href="https://www.linkedin.com/in/curtis-comp-sci" target="_blank">LinkedIn</a></li>
+		                <li class="kaggle"><a href="https://www.kaggle.com/cwthompson" target="_blank">Kaggle</a></li>
+		                <li class="github"><a href="https://github.com/CurtisThompson/" target="_blank">GitHub</a></li>
+		            </ul>
+		        </div>
+		        
+		        <p class="copyright">&copy; 2015-2021 Curtis Thompson</p>
+		    </div>
+		</div>
+	</body>
+	
+</html>

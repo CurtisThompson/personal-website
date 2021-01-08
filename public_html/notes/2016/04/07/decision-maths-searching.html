@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	
+	<head>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-175187876-1"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+		
+		  gtag('config', 'UA-175187876-1');
+		</script>
+		
+		<meta charset="UTF-8" />
+		<meta name="theme-color" content="#54a0ac" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="/js/jquery-3.2.0.js"></script>
+    	<title>Curtis Thompson - <!NOTETITLE!></title>
+		
+    	<link rel="stylesheet" type="text/css" href="/stylesheets/main.css" />
+    	<link rel="stylesheet" type="text/css" href="/stylesheets/notes.css" />
+    	<meta name="author" content="Curtis Thompson" />
+    	<meta name="description" content="Binary Search is the only searching algorithm in D1, it is used to determine whether an item is in a list and then find the position of the item if it is in the list. Binary Search always looks at the middle of the list so is very quick, however to do this the list must be ordered." />
+    	<meta name="keywords" content="curtis, thompson, binary search, decision, maths, edexcel, d1, sorting, searching, education, notes" />
+
+	</head>
+	
+	<body>
+		<div id="header">
+			<div id="ct-header">
+				<div class="header-width-container">
+				    <a href="/"><p>Curtis Thompson</p></a>
+				</div>
+			</div>
+			<div id="menu">
+		        <div class="header-width-container">
+		        	<a href="/"><div class="menu-button">
+		        		<h2>Home</h2>
+		        	</div></a>
+		        	<a href="/projects"><div class="menu-button">
+		        		<h2>Projects</h2>
+		        	</div></a>
+		        	<a href="/about"><div class="menu-button">
+		        		<h2>About</h2>
+		        	</div></a>
+		        	<a href="/notes"><div class="menu-button">
+		        		<h2>Notes</h2>
+		        	</div></a>
+		        </div>
+		    </div>
+			<div id="menu-mobile-button"><div class="header-width-container"><h2>&#9776; Menu</h2></div></div>
+			<div id="menu-mobile">
+			    <div class="header-width-container">
+		    		<a href="/"><div class="menu-button">
+		    			<h2>Home</h2>
+		    		</div></a>
+		    		<a href="/projects"><div class="menu-button">
+		    			<h2>Projects</h2>
+		    		</div></a>
+		    		<a href="/about"><div class="menu-button">
+		    			<h2>About</h2>
+		    		</div></a>
+		    		<a href="/notes"><div class="menu-button">
+		    			<h2>Notes</h2>
+		    		</div></a>
+		    	</div>
+			</div>
+		    <script src="/js/mobile-menu.js"></script>
+		</div>
+	
+		<div id="main-content">
+    		<h1 id="small-header-box"><!NOTETITLE!></h1>
+    		<div class="notes-text">
+        		<div class="notes-details">
+					<span class="author"><!NOTEAUTHOR!></span>
+					<span class="date">Thursday 7th April 2016</span>
+					<span class="topic">Academics</span>
+				</div>
+        		
+        		
+        		<p>Binary Search is the only searching algorithm in D1, it is used to determine whether an item is in a list and then find the position of the item if it is in the list. Binary Search always looks at the middle of the list so is very quick, however to do this the list must be ordered. The algorithm for Binary Search is:</p>
+        		<ol>
+        			<li>Select the midpoint of the list and compare with the item being searched for</li>
+        			<ul>
+        				<li>If the midpoint is the item being searched for, search is complete</li>
+        				<li>If the midpoint is before the item being searched for, discard the first half of the list</li>
+        				<li>If the midpoint is after the item being searched for, discard the second half of the list</li>
+        			</ul>
+        			<li>Repeat step 1 with the new, halved list</li>
+        		</ol>
+        		<p>The main points to remember about Binary Search are:</p>
+        		<ul>
+        			<li>The list must be sorted to perform this algorithm</li>
+        			<li>If asked to sort the list before using the algorithm, Quick Sort must be used</li>
+        			<li>When discarding one half of the list the midpoint is also discarded</li>
+        			<li>The half of the list being discarded is the half which the item cannot be in if the list is sorted</li>
+        			<li>At most, log(n) repeats are needed (with logarithms in base 2)</li>
+        			<li>The equation (n+m)/2 can be used to find the midpoint of the list when rounded up, where n is the position of the first item and m is the position of the last item</li>
+        		</ul>
+        		<p>An example of Binary Search is shown below. It starts with the original list; Amy, David, Emily, Jess, Matt, Simon, Tina. Emily is the item being searched for.</p>
+
+        		<div class="captioned-image">
+        			<img alt="Binary search" src="BinarySearchExample.png">
+        			<p>The example above shows how a question should be answered when it asks for the Binary Search algorithm to be used.</p>
+        		</div>
+
+        	</div>
+            
+            <div class="notes-others">
+        		
+            </div>
+    	</div>
+		
+		<div id="footer">
+		    <div class="footer-width-container">
+		        <div class="footer-column">
+		            <h2>Curtis Thompson</h2>
+		            <p>Well, let me just say a few words about myself... I'm a Computer Science student at the University of Warwick, interested in taking on new challenges. Hopefully you can see that through the projects and notes on my website.</p>
+		        </div>
+		        
+		        <div class="footer-column">
+		            <h2>Menu</h2>
+		            <ul>
+		                <li><a href="/">Home</a></li>
+		                <li><a href="/projects/">Projects</a></li>
+		                <li><a href="/about/">About</a></li>
+		                <li><a href="/notes/">Notes</a></li>
+		            </ul>
+		        </div>
+		        
+		        <div class="footer-column">
+		            <h2>Get In Touch</h2>
+		            <ul>
+		                <li class="website"><a href="/">www.cwthompson.com</a></li>
+		                <li class="linkedin"><a href="https://www.linkedin.com/in/curtis-comp-sci" target="_blank">LinkedIn</a></li>
+		                <li class="kaggle"><a href="https://www.kaggle.com/cwthompson" target="_blank">Kaggle</a></li>
+		                <li class="github"><a href="https://github.com/CurtisThompson/" target="_blank">GitHub</a></li>
+		            </ul>
+		        </div>
+		        
+		        <p class="copyright">&copy; 2015-2021 Curtis Thompson</p>
+		    </div>
+		</div>
+	</body>
+	
+</html>

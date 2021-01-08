@@ -1,25 +1,20 @@
-<!DOCTYPE html>
+<!NOTETITLE!>Thoughts On A Computer Learning Blackjack<!NOTETITLE!>
 
-<html lang="en">
-    
-    <head>
-    	<title>Curtis Thompson - Thoughts On A Computer Learning Blackjack</title>
+<!NOTEAUTHOR!>Curtis Thompson<!NOTEAUTHOR!>
+
+<!NOTEDATE!>Sunday 11th September 2016<!NOTEDATE!>
+
+<!NOTETOPIC!>Artificial Intelligence<!NOTETOPIC!>
+
+<!HEADCONTENT!>
     	<link rel="stylesheet" type="text/css" href="/stylesheets/main.css" />
     	<link rel="stylesheet" type="text/css" href="/stylesheets/notes.css" />
     	<meta name="author" content="Curtis Thompson" />
     	<meta name="description" content="In a few weeks I will be starting university. I received a welcome letter from the Computer Science department recently and they say that getting used to using Java would be useful, but you do not need any programming experience at the start of the course. Yeah, to me that means I am going to spend the next few weeks having fun by messing around in Java. I hadn't worked on an AI project in a while so I thought I'd look at interesting ways of completing a simple task, playing Blackjack.</" />
     	<meta name="keywords" content="curtis, thompson, programming, java, ai, artificial intelligence, blackjack, 21, pontoon, learning, dealer, learn, probability, computer, university, cards, counting, code, program" />
-    	<?php include($_SERVER['DOCUMENT_ROOT'] . '/php-assets/core-header.php'); ?>
-    </head>
+<!HEADCONTENT!>
 
-
-    <body>
-		<?php include($_SERVER['DOCUMENT_ROOT'] . '/php-assets/menu.php'); ?>
-	
-		<div id="main-content">
-    		<h1 id="small-header-box">Thoughts On A Computer Learning Blackjack</h1>
-		    <div class="notes-text">
-        		<div class="notes-details"><span class="author">Curtis Thompson</span><span class="date">Sunday 11th September 2016</span><span class="topic">Artificial Intelligence</span></div>
+<!BODYCONTENT!>
 		        <p>In a few weeks I will be starting university. I received a welcome letter from the Computer Science department recently and they say that getting used to using Java would be useful, but you do not need any programming experience at the start of the course. Yeah, to me that means I am going to spend the next few weeks having fun by messing around in Java. I hadn't worked on an AI project in a while so I thought I'd look at interesting ways of completing a simple task, playing Blackjack.</p>
 		        <p>Coding a game where the user plays against the AI dealer in Blackjack is not hard, I've already done that in Java. Now I am looking at how an AI could be implemented to make the dealer harder to play against. The purpose of this is not to find the optimum way of playing, but just to see a few different tactics that a computer can use which are easy for a programmer to implement.</p>
 		        <br />
@@ -32,14 +27,4 @@
 				<p><strong>Calculating Probabilities</strong><br /><br />The two methods of learning would be expected to give similar values to those that could be calculated by a mathematician. An AI could choose not to learn, and instead just calculate the probability. If the AI was to learn, it could just learn from the player's hand and therefore get a probability that the user has gone bust or gained a high score, then using the previously calculated probabilities to decide whether to stick.</p>
 				<br />
 				<p><br />There are many methods that could be tested, however I am attempting to keep the programming in this as simple as possible. All of these methods could realistically be implemented by anyone with little programming experience (but the code would probably be longer than they are used to) as they require only basic knowledge. Probabilities will also require some mathematical knowledge but besides that they are not hard. As I am "learning" some Java before university starts I may try to implement one or two of these. I will update with my progress once I do.</p>
-	        </div>
-	    
-	        <div class="notes-others">
-        		<?php include($_SERVER['DOCUMENT_ROOT'] . '/php-assets/other-notes.php'); ?>
-            </div>
-    	</div>
-		
-		<?php include($_SERVER['DOCUMENT_ROOT'] . '/php-assets/footer.php'); ?>
-    </body>
-
-</html>
+<!BODYCONTENT!>
