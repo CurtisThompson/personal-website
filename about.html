@@ -8,12 +8,25 @@
 		<meta name="author" content="Curtis Thompson" />
 		<meta name="description" content="Hey, I'm Curtis Thompson. I'm a programmer, student, world-renowned mastermind, 100m world record holder... Well, the first two are true! I love to take on new challenges, so through the projects and notes on this website you can see a few of those challenges that I have taken on. I am a student at the University of Warwick, currently studying my MEng Computer Science degree - amongst many other things." />
 		<meta name="keywords" content="curtis, thompson, about, warwick, programmer, student, portfolio, challenges" />
+		
 		<script class="jquery-script" src="/js/jquery-3.2.0.js"></script>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-175187876-1"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'UA-175187876-1');
+		</script>
+
+		<meta charset="UTF-8" />
+		<meta name="theme-color" content="#54a0ac" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<script>
 		$(document).ready(function(){
 			$('#pre-main').load('/php-assets/menu.html');
-			$('#pre-main').load('/php-assets/footer.html');
-			alert('hi');
+			$('#post-main').load('/php-assets/footer.html');
 		});</script>
 	</head>
 	
