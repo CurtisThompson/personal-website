@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+	<head>
+		<title>Curtis Thompson - Mike - Virtual Trading Assistant</title>
+		<link rel="stylesheet" type="text/css" href="/stylesheets/main.css" />
+		<link rel="stylesheet" type="text/css" href="/stylesheets/projects.css" />
+		<meta name="author" content="Curtis Thompson" />
+		<meta name="description" content="Built in collaboration with Deutsche Bank, this trading assistant is able to provide you with knowledge on the FTSE 100, as well as alert you to changes in your favourite stocks and major financial news. Mike learns from your interactions, becoming personalised to you and helping to improve your trading experience." />
+		<meta name="keywords" content="curtis, thompson, software engineering, deutsche bank, trading, assistant, FTSE 100, mike, virtual, team, companies, java, sql, nlp" />
+		
+		<script class="jquery-script" src="/js/jquery-3.2.0.js"></script>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-175187876-1"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'UA-175187876-1');
+		</script>
+
+		<meta charset="UTF-8" />
+		<meta name="theme-color" content="#54a0ac" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script>
+		$(function(){
+			$('#pre-main').load('/php-assets/menu.html');
+			$('#post-main').load('/php-assets/footer.html');
+		});</script>
+		<script src="/js/spoiler-change.js"></script>
+	</head>
+	
+	
+	<body>
+		<div id="pre-main"></div>
+	
+		<div id="main-content">
+			<h1 id="small-header-box">Mike - Virtual Trading Assistant</h1>
+			
+			<div class="project-text-box">
+				<div class="info-row"><span class="info-head">Date</span><span class="info-body">January 2018 - March 2018</span></div>
+				<div class="info-row"><span class="info-head">Role</span><span class="info-body">Programmer and Quality Assurance Manager</span></div>
+				<div class="info-row"><span class="info-head">Technologies</span><span class="info-body">Java, SQL</span></div>
+				<div class="info-row"><span class="info-head">Description</span><span class="info-body">Built in collaboration with Deutsche Bank, this trading assistant is able to provide you with knowledge on the FTSE 100, as well as alert you to changes in your favourite stocks and major financial news. Mike learns from your interactions, becoming personalised to you and helping to improve your trading experience.</span></div>
+			</div>
+			
+			<div class="project-text-box project-button-container">
+				<a href="https://github.com/CurtisThompson/mike-virtual-trading-assistant" class="project-button github">GitHub</a>
+			</div>
+			
+			<div class="project-text-box project-image-container">
+			    <img src="mike.png" class="project-image" alt="Mike - Virtual Trading Assistant" />
+			</div>
+			
+			<div class="project-text-box">
+				<h2>Features</h2>
+				<ul>
+					<li>Query stock prices for FTSE 100</li>
+					<li>Live news retrieval for FTSE 100 companies</li>
+					<li>Learns popular queries for personalised information</li>
+					<li>Voice and text input and output</li>
+					<li>Responds to input in real-time</li>
+				</ul>
+			</div>
+			
+			<div class="project-text-box">
+				<h2>Questions</h2>
+				<div class="spoiler-button spoilerbutton">Why was this program developed?</div>
+				<div id="spoiler1" class="spoiler">This program was developed as part of the CS261 Software Engineering course during my university degree, with the project specification set out by Deutsche Bank. Our six-person team had two and a half months to build the program and present it to Deutsche Bank.</div>
+				<div class="spoiler-button spoilerbutton">What was your role in the project?</div>
+				<div id="spoiler2" class="spoiler">Every member of our team had the responsibility of completing the various reports, and programming Mike. I had the added responsibility as Quality Assurance Manager to create and execute the test plan, passing back the problems with potential fixes to the rest of the team.</div>
+				<div class="spoiler-button spoilerbutton">How do the personalised messages work?</div>
+				<div id="spoiler3" class="spoiler">With each query to Mike, the companies and business sectors that are asked about are stored in a database (with a note of that user). Mike will then go through the database and run an algorithm to find the user's most commonly queried companies and sectors in a recent period. The resulting information is used to automatically perform queries as the user loads up Mike, or on request of their personalised information.</div>
+				<div class="spoiler-button spoilerbutton">What was the hardest part of the project?</div>
+				<div id="spoiler4" class="spoiler">The hardest part (although very interesting) was developing the requirements and designs for the software based on the specification. Since some areas of the specification were poorly detailed, we had to compile a list of questions and ideas which could be taken to meetings that we scheduled with Deutsche Bank. Through this, we could get a clearer idea of what Deutsche Bank wanted in the project, and we could develop the product they wanted.</div>
+				<div class="spoiler-button spoilerbutton">If you could change one thing about the project, what would you change?</div>
+				<div id="spoiler5" class="spoiler">I think one of the main changes I would make would be to how the user inputted text is handled. Currently, the determine the intent of any queries it must be passed to an external API which returns the results. This offers very little flexibility besides what the API alows to the change (the keywords we are looking for). With more time it would be possible for us to implement our own methods to process the queries and extra relevant information (Python's NLTK offers may tools for this) - which then gives us more options with regards to what Mike can respond to.</div>
+			</div>
+		</div>
+		
+		<div id="post-main"></div>
+	</body>
+</html>

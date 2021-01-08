@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+	<head>
+		<head>
+		<title>Curtis Thompson - Multi-Threaded Packet Sniffer</title>
+		<link rel="stylesheet" type="text/css" href="/stylesheets/main.css" />
+		<link rel="stylesheet" type="text/css" href="/stylesheets/projects.css" />
+		<meta name="author" content="Curtis Thompson" />
+		<meta name="description" content="A Linux packet sniffer that is able to detect and analyse Ethernet, ARP, IP, TCP and HTTP packets. The system also detects ARP cache-poisoning attacks, Christmas Tree attacks and blacklisted URL requests. A thread pool of up to 8 threads allows for multiple packets to be analysed at once." />
+		<meta name="keywords" content="curtis, thompson, c, operating systems, ARP, TCP, IP, HTTP, blacklisted URLs, christmas tree, packet sniffer, threading, networks, linux" />
+		
+		<script class="jquery-script" src="/js/jquery-3.2.0.js"></script>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-175187876-1"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'UA-175187876-1');
+		</script>
+
+		<meta charset="UTF-8" />
+		<meta name="theme-color" content="#54a0ac" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script>
+		$(function(){
+			$('#pre-main').load('/php-assets/menu.html');
+			$('#post-main').load('/php-assets/footer.html');
+		});</script>
+		<script src="/js/spoiler-change.js"></script>
+	</head>
+	
+	
+	<body>
+	    <div id="pre-main"></div>
+	
+		<div id="main-content">
+			<h1 id="small-header-box">Multi-Threaded Packet Sniffer</h1>
+			
+			<div class="project-text-box">
+				<div class="info-row"><span class="info-head">Date</span><span class="info-body">November 2017 - December 2017</span></div>
+				<div class="info-row"><span class="info-head">Role</span><span class="info-body">Solo Project</span></div>
+				<div class="info-row"><span class="info-head">Technologies</span><span class="info-body">C</span></div>
+				<div class="info-row"><span class="info-head">Description</span><span class="info-body">A Linux packet sniffer that is able to detect and analyse Ethernet, ARP, IP, TCP and HTTP packets. The system also detects ARP cache-poisoning attacks, Christmas Tree attacks and blacklisted URL requests. A thread pool of up to 8 threads allows for multiple packets to be analysed at once.</span></div>
+			</div>
+			
+			<div class="project-text-box project-button-container">
+				<a href="Report.pdf" class="project-button download">Report</a>
+			</div>
+			
+			<div class="project-text-box project-image-container">
+			    <img src="packet-sniffer.png" class="project-image" alt="Packet Sniffer Results" />
+			</div>
+			
+			<div class="project-text-box">
+				<h2>Features</h2>
+				<ul>
+					<li>Detects Ethernet, ARP, IP, TCP, and HTTP packets</li>
+					<li>Outputs information contained in the headers and body data</li>
+					<li>Detects ARP cache-poisoning, Christmas tree attacks, and blacklisted URL requests</li>
+					<li>Threadpool of up to 8 threads</li>
+				</ul>
+			</div>
+			
+			<div class="project-text-box">
+				<h2>Questions</h2>
+				<div class="spoiler-button spoilerbutton">Why was this program developed?</div>
+				<div id="spoiler1" class="spoiler">This program was developed as part of the CS241 Operating Systems and Computer Networks course during my university degree. As part of the coursework for the module, I had to develop a C program that was able to detect incoming packets on a Linux system, analysing the packets headers (as well as HTTP data) to alert the user if certain attacks are occuring.</div>
+				<div class="spoiler-button spoilerbutton">What is ARP cache-poisoning, and how is it detected?</div>
+				<div id="spoiler2" class="spoiler">ARP cache-poisoning is where an attacker spoofs ARP packets to falsely associate a MAC address with an IP address of another device. This basic program detects all ARP packets and notes them as potential ARP cache-poisoning attacks.</div>
+				<div class="spoiler-button spoilerbutton">What is a Christmas tree attack, and how is it detected?</div>
+				<div id="spoiler3" class="spoiler">A Christmas tree attack is the sending of Christmas tree packets (packets with many or all of the TCP flags set). Since different operating systems will comply with the Internet Protocol standard in different ways, sending these kind of packets will help an attacker determine the operating system of a system. Three flags that are not set under normal circumstances but are in a Christmas tree attack are FIN, URG, and PSH. So detecting these three flags as seet in the TCP header indicates a Christmas tree attack.</div>
+				<div class="spoiler-button spoilerbutton">How are blacklisted URLs detected?</div>
+				<div id="spoiler4" class="spoiler">Within a HTTP packet several pieces of information is contained. One piece of information within requests is the Host URL, the URL being connected to. If this Host is a blacklisted URL (or a variation of one) then the packet can be detected and dealt with.</div>
+				<div class="spoiler-button spoilerbutton">What other protocols can be detected? And is it possible to change the program to detect new protocols?</div>
+				<div id="spoiler5" class="spoiler">The program currently is able to parse Ethernet, ARP, IP, and TCP headers, as well as HTTP data. Packets which do not contain any of these headers will be detected by the program, but the information within them is not parsed. Parsing of the data can be added to the source code however due to the layered parsing method, assuming the structure of the data is known.</div>
+			</div>
+		</div>
+		
+		<div id="post-main"></div>
+	</body>
+</html>

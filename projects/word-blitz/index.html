@@ -1,0 +1,91 @@
+<?php
+	include("../../database.php");
+?>
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+	<head>
+		<head>
+		<title>Curtis Thompson - Word Blitz</title>
+		<link rel="stylesheet" type="text/css" href="/stylesheets/main.css" />
+		<link rel="stylesheet" type="text/css" href="/stylesheets/projects.css" />
+		<meta name="author" content="Curtis Thompson" />
+		<meta name="description" content="Are you a dictionary dummy or a word wizard? Do you think crosswords are easy? Well, maybe you need a new challenge! Word Blitz is a game where you must try to make as many words as you can before your time runs out. Every time you make a new word you will be given a different selection of letters to make your new word from. This fast-paced game is fun to play when you have a minute or two to spare, or a good way of seeing which of your friends has the fastest vocabulary. Earn more points and get more time by making longer words to push yourselves up the leader boards and earn over 20 different achievements." />
+		<meta name="keywords" content="curtis, thompson, google play, android, app, word blitz, countdown, words, student, portfolio, conundrum, unity, project, download, achievements, leaderboards, letters, solver, challenge" />
+		
+		<script class="jquery-script" src="/js/jquery-3.2.0.js"></script>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-175187876-1"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'UA-175187876-1');
+		</script>
+
+		<meta charset="UTF-8" />
+		<meta name="theme-color" content="#54a0ac" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script>
+		$(function(){
+			$('#pre-main').load('/php-assets/menu.html');
+			$('#post-main').load('/php-assets/footer.html');
+		});</script>
+		<script src="/js/spoiler-change.js"></script>
+	</head>
+	
+	
+	<body>
+		<div id="pre-main"></div>
+	
+		<div id="main-content">
+			<h1 id="small-header-box">Word Blitz</h1>
+			
+			<div class="project-text-box">
+				<div class="info-row"><span class="info-head">Date</span><span class="info-body">August 2016</span></div>
+				<div class="info-row"><span class="info-head">Role</span><span class="info-body">Solo Project</span></div>
+				<div class="info-row"><span class="info-head">Technologies</span><span class="info-body">C#, Unity</span></div>
+				<div class="info-row"><span class="info-head">Description</span><span class="info-body">Are you a dictionary dummy or a word wizard? Do you think crosswords are easy? Well, maybe you need a new challenge! Word Blitz is a game where you must try to make as many words as you can before your time runs out. This fast-paced game is a good way of seeing which of your friends has the fastest vocabulary.</span></div>
+			</div>
+			
+			<div class="project-text-box project-button-container">
+				<a href="https://play.google.com/store/apps/details?id=com.Curtis_Thompson.Word_Blitz" class="project-button download">Download</a>
+			</div>
+			
+			<div class="project-text-box project-image-container">
+			    <img src="Word Blitz 3.png" class="project-image" alt="Word Blitz" />
+			</div>
+			
+			<div class="project-text-box">
+				<h2>Features</h2>
+				<ul>
+					<li>Over 100 billion different possible letter selections</li>
+					<li>Dictionary of almost 100,000 1-9 letter words</li>
+					<li>Several different scoring methods</li>
+					<li>Detailed statistics</li>
+					<li>Achievements</li>
+					<li>Leaderboards</li>
+				</ul>
+			</div>
+			
+			<div class="project-text-box">
+				<h2>Questions</h2>
+				<div class="spoiler-button spoilerbutton">What is Word Blitz?</div>
+				<div id="spoiler1" class="spoiler">Word Blitz is a game where you must try to find words as fast as possible. You are given nine letters, and have to submit a word that can be made from those letters. The letters will keep changing every time you find a word so that the game is always different. You start with just one miunte to find as many words as possible.</div>
+				<div class="spoiler-button spoilerbutton">What role did you play in creating Word Blitz?</div>
+				<div id="spoiler2" class="spoiler">I developed the whole app myself in Unity and by using C#. I wrote all the scripts, did all the graphics, made all the sound effects (with my own voice) and came up with the whole concept. I am also still communicating with players to improve the game and fix bugs.</div>
+				<div class="spoiler-button spoilerbutton">Will this game be released on iOS?</div>
+				<div id="spoiler3" class="spoiler">Releasing the game on iOS is something I am considering in the future.</div>
+				<div class="spoiler-button spoilerbutton">How can I download this app?</div>
+				<div id="spoiler4" class="spoiler">Click the image above to go to the app's page on the Google Play Store. Alternatively you can search for "Word Blitz" on the Google Play Store.</div>
+				<div class="spoiler-button spoilerbutton">How are points awarded in Word Blitz?</div>
+				<div id="spoiler5" class="spoiler">Points are awarded based on two things; the length of the word created and how quickly the word was submitted. The length of the word is more important, for example a three letter word is worth only 100 points while a seven letter word is worth 1000 points. There is then a time multiplier depending on how fast the word was submitted, provided it was submitted within 10 seconds.</div>
+			</div>
+		</div>
+		
+		<div id="post-main"></div>
+	</body>
+</html>

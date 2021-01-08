@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+	<head>
+		<title>Curtis Thompson - Demon's Field</title>
+		<link rel="stylesheet" type="text/css" href="/stylesheets/main.css" />
+		<link rel="stylesheet" type="text/css" href="/stylesheets/projects.css" />
+		<meta name="author" content="Curtis Thompson" />
+		<meta name="description" content="The village is under attack from waves of monsters! Help to defend the village from increasing difficulties of waves, or take on some of Yael's and Shady's missions instead. There are a variety of monsters to defeat as you explore the map of plains, forests, snow, lava and more..." />
+		<meta name="keywords" content="curtis, thompson, demon's field, game, yael, shady, wave, programmer, student, portfolio" />
+		
+		<script class="jquery-script" src="/js/jquery-3.2.0.js"></script>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-175187876-1"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'UA-175187876-1');
+		</script>
+
+		<meta charset="UTF-8" />
+		<meta name="theme-color" content="#54a0ac" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script>
+		$(function(){
+			$('#pre-main').load('/php-assets/menu.html');
+			$('#post-main').load('/php-assets/footer.html');
+		});</script>
+		<script src="/js/spoiler-change.js"></script>
+	</head>
+	
+	
+	<body>
+		<div id="pre-main"></div>
+	
+		<div id="main-content">
+			<h1 id="small-header-box">Demon's Field</h1>
+			
+			<div class="project-text-box">
+				<div class="info-row"><span class="info-head">Date</span><span class="info-body">March 2015</span></div>
+				<div class="info-row"><span class="info-head">Role</span><span class="info-body">Solo Project</span></div>
+				<div class="info-row"><span class="info-head">Technologies</span><span class="info-body">GML, GameMaker</span></div>
+				<div class="info-row"><span class="info-head">Description</span><span class="info-body">The village is under attack from waves of monsters! Help to defend the village from increasing difficulties of waves, or take on some of Yael's and Shady's missions instead. There are a variety of monsters to defeat as you explore the map of plains, forests, snow, lava and more...</span></div>
+			</div>
+			
+			<div class="project-text-box project-button-container">
+				<a href="DemonsField.exe" class="project-button download">Download</a>
+			</div>
+			
+			<div class="project-text-box project-image-container">
+			    <img src="demons-field-5.png" class="project-image" alt="Demon's Field" />
+			</div>
+			
+			<div class="project-text-box">
+				<h2>Features</h2>
+				<ul>
+					<li>Unlimited waves of increasing difficulty</li>
+					<li>Two branches of side quests from Yael and Shady</li>
+					<li>Achievements</li>
+					<li>End-game statistics</li>
+					<li>Random diamond and enemy spawning</li>
+					<li>Several unique weapons</li>
+				</ul>
+			</div>
+			
+			<div class="project-text-box">
+				<h2>Questions</h2>
+				<div class="spoiler-button spoilerbutton">How do I play?</div>
+				<div id="spoiler1" class="spoiler">Click the image to download the game. Sadly, due to the way it was developed, you will only be able to play if you are running a Windows OS.</div>
+				<div class="spoiler-button spoilerbutton">What are the controls?</div>
+				<div id="spoiler2" class="spoiler">All instructions are in the game. Press 'P' to pause or unpause the game which allows you to check the controls.</div>
+				<div class="spoiler-button spoilerbutton">What am I meant to do?</div>
+				<div id="spoiler3" class="spoiler">The main objective is to defend your hut from the various enemies. You can also complete side missions from Yael and Shady, explore the map or aim to win all 12 achievements. There is a lot to do!</div>
+				<div class="spoiler-button spoilerbutton">How do I check my achievements?</div>
+				<div id="spoiler4" class="spoiler">Below the village is a statue, use the action key on it to check your achievements.</div>
+				<div class="spoiler-button spoilerbutton">Do you have any tips to survive the waves?</div>
+				<div id="spoiler5" class="spoiler">In between waves use a rope to get up to the geysers to collect water bombs, it is much quicker than collecting coconuts. Stack up on weapons and unleash them at anything that moves.</div>
+				<div class="spoiler-button spoilerbutton">What is the furthest wave you have reached?</div>
+				<div id="spoiler6" class="spoiler">Wave 6. Everything was going perfect until after wave 5 when I kept dying so did not have time to collect enough weapons. I could do better and theoretically wave 10 is possible to complete, but I'll be impressed if anyone can do it.</div>
+				<div class="spoiler-button spoilerbutton">Wait! Aleph Hound, Bet M1, Gimel... I noticed something!</div>
+				<div id="spoiler7" class="spoiler">Shhhhh! Don't tell anyone...</div>
+				<div class="spoiler-button spoilerbutton">Who are Yael and Shady?</div>
+				<div id="spoiler8" class="spoiler">Yael is the village doctor who heals you and hands out random missions. She is based on my friend who, by a strange coincience, also happens to be called Yael. Shady is the hidden warrior who offers a series of story-based missions, I thought of his name while listening to a certain 'slim' rapper although this character is not actually based on anyone.</div>
+				<div class="spoiler-button spoilerbutton">How many quests does Shady have?</div>
+				<div id="spoiler9" class="spoiler">Shady has 11 quests, the final one has both a big surprise and a big reward. Shady's quests are challenging but rewarding, can you complete them?</div>
+				<div class="spoiler-button spoilerbutton">Will you update the game?</div>
+				<div id="spoiler10" class="spoiler">Updating Demon's Field is something I want to do but I am already working on a few projects. Adding more monsters, environmental objects and items is something I hope to do in the future.</div>
+				<div class="spoiler-button spoilerbutton">How does the enemy AI work?</div>
+				<div id="spoiler11" class="spoiler">The AI is based on random numbers and heuristics. Enemies will try to chase and attack you if nearby (as any enemy should) but will use random numbers to determine movement, which also contains a few rules. A jumping Gimel also has extra rules to determine where and when to jump, but will generally try to jump to higher ground.</div>
+			</div>
+		</div>
+		
+		<div id="post-main"></div>
+	</body>
+</html>

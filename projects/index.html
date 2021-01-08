@@ -10,12 +10,31 @@
 		<meta name="author" content="Curtis Thompson" />
 		<meta name="description" content="Hey, I'm Curtis Thompson. I'm a programmer, student, world-renowned mastermind, 100m world record holder... Well, the first two are true! On my website you'll find a collection of my programs, games, writing and work. Enjoy!" />
 		<meta name="keywords" content="curtis, thompson, home, page, programmer, student, portfolio, pascal, c#, python, html, css, demon's field, maze game" />
-		<?php include($_SERVER['DOCUMENT_ROOT'] . '/php-assets/core-header.php'); ?>
+		
+		<script class="jquery-script" src="/js/jquery-3.2.0.js"></script>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-175187876-1"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'UA-175187876-1');
+		</script>
+
+		<meta charset="UTF-8" />
+		<meta name="theme-color" content="#54a0ac" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script>
+		$(function(){
+			$('#pre-main').load('/php-assets/menu.html');
+			$('#post-main').load('/php-assets/footer.html');
+		});</script>
 	</head>
 	
 	
 	<body>
-		<?php include($_SERVER['DOCUMENT_ROOT'] . '/php-assets/menu.php'); ?>
+		<div id="pre-main"></div>
 		
 		<div id="main-content">
 			<p class="intro-text">Here you can find a range of projects that I've worked on. Feel free to click on any of them for more information. Enjoy!</p>
@@ -73,7 +92,7 @@
 			</div>
 		</div>
 		
-		<?php include($_SERVER['DOCUMENT_ROOT'] . '/php-assets/footer.php'); ?>
+		<div id="post-main"></div>
 	</body>
 	
 </html>
