@@ -110,7 +110,7 @@ for n in notes:
     n_js += '"Author" : "' + n[2] + '", '
     n_js += '"Date" : "' + n[3] + '", '
     n_js += '"Topic" : "' + n[4] + '", '
-    n_js += '"Content" : "' + n[5].replace('\n', ' ').replace('\r', '').strip()[:250] + '", '
+    n_js += '"Content" : "' + n[5].replace('\n', ' ').replace('\r', '').replace('"', '\\"').strip()[:250] + '...", '
     n_js += '}, '
     note_js += n_js
 note_js += '];'
