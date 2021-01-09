@@ -105,7 +105,7 @@ notes = notes[::-1]
 note_js = 'var notes_list = ['
 for n in notes:
     n_js = '{'
-    n_js += '"URL" : "' + n[0] + '", '
+    n_js += '"URL" : "' + n[0].replace('\\','\\\\') + '", '
     n_js += '"Title" : "' + n[1] + '", '
     n_js += '"Author" : "' + n[2] + '", '
     n_js += '"Date" : "' + n[3] + '", '
