@@ -1,5 +1,10 @@
 import os
 import re
+from bs4 import BeautifulSoup
+
+#########################################################################
+# Build Static Pages From Templates
+#########################################################################
 
 PATH = '.\\no_public_html'
 
@@ -58,7 +63,7 @@ PREFILLED_NOTES = re.sub('<!FOOTER!>', FOOTER, PREFILLED_NOTES)
 
 # Go through files and merge with templates, then output
 for file in html_files:
-    print(file)
+    #print(file)
     if '\\notes\\' not in file:
         data = fill_file(file, PREFILLED_TEMPLATE)
     else:
@@ -66,3 +71,47 @@ for file in html_files:
     
     new_path = file.replace('\\no_public_html\\', '\\public_html\\')
     write_file_contents(new_path, data)
+
+
+
+#########################################################################
+# Create List of All Notes
+#########################################################################
+
+PATH = '.\\no_public_html\\notes\\'
+
+notes_files = [os.path.join(dp, f) for dp, dn, filenames in os.walk(PATH) for f in filenames if os.path.splitext(f)[1] == '.html']
+notes_files.remove('.\\no_public_html\\notes\\index.html')
+
+# Get a list of all notes
+notes = []
+for file in notes_files:
+    # Get file data
+    data = get_file_contents(file)
+    
+    # Get tags
+    url = file.replace('.\\no_public_html', '')
+    title = get_tag(data, '<!NOTETITLE!>')
+    author = get_tag(data, '<!NOTEAUTHOR!>')
+    date = get_tag(data, '<!NOTEDATE!>')
+    topic = get_tag(data, '<!NOTETOPIC!>')
+    content = get_tag(data, '<!BODYCONTENT!>')
+    content = BeautifulSoup(content, 'html.parser').get_text()
+    
+    notes.append([url, title, author, date, topic, content])
+notes = notes[::-1]
+
+# Create JS file
+note_js = 'var notes_list = ['
+for n in notes:
+    n_js = '{'
+    n_js += '"URL" : "' + n[0] + '", '
+    n_js += '"Title" : "' + n[1] + '", '
+    n_js += '"Author" : "' + n[2] + '", '
+    n_js += '"Date" : "' + n[3] + '", '
+    n_js += '"Topic" : "' + n[4] + '", '
+    n_js += '"Content" : "' + n[5].replace('\n', ' ').replace('\r', '').strip()[:250] + '", '
+    n_js += '}, '
+    note_js += n_js
+note_js += '];'
+write_file_contents('.\\public_html\\js\\notes_list.js', note_js)
