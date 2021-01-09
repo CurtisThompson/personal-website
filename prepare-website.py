@@ -35,7 +35,7 @@ def fill_file(file, template):
     data = get_file_contents(file)
     
     results = template
-    for tag in ['<!HEADCONTENT!>', '<!BODYCONTENT!>', '<!NOTETITLE!>'
+    for tag in ['<!HEADCONTENT!>', '<!BODYCONTENT!>', '<!NOTETITLE!>',
                 '<!NOTEAUTHOR!>', '<!NOTEDATE!>', '<!NOTETOPIC!>',
                 '<!NOTEOTHERS!>']:
         results = re.sub(tag, get_tag(data, tag), results)
