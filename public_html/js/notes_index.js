@@ -10,8 +10,8 @@ function create_notes_html(dict) {
 
 $(function(){
 	var html_insert = '';
-	for (const dict in notes_list.slice(0, 5)) {
-		html_insert += create_notes_html(dict) + '\n';
+	for (const i in notes_list.slice(0, 5)) {
+		html_insert += create_notes_html(notes_list[i]) + '\n';
 	}
 	$('#main-content h2').after(html_insert);
 });
