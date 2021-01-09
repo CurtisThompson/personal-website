@@ -63,8 +63,8 @@ PREFILLED_NOTES = re.sub('<!FOOTER!>', FOOTER, PREFILLED_NOTES)
 
 # Go through files and merge with templates, then output
 for file in html_files:
-    #print(file)
-    if '\\notes\\' not in file:
+    print(file)
+    if '\\notes\\' not in file or file == '.\\no_public_html\\notes\\index.html':
         data = fill_file(file, PREFILLED_TEMPLATE)
     else:
         data = fill_file(file, PREFILLED_NOTES)
