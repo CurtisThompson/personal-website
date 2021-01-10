@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	
+	<head>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-175187876-1"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+		
+		  gtag('config', 'UA-175187876-1');
+		</script>
+		
+		<meta charset="UTF-8" />
+		<meta name="theme-color" content="#54a0ac" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="/js/jquery-3.2.0.js"></script>
+    	<title>Curtis Thompson - Static Websites with AWS Amplify</title>
+		
+		<link rel="stylesheet" type="text/css" href="/stylesheets/main.css" />
+    	<link rel="stylesheet" type="text/css" href="/stylesheets/notes.css" />
+    	<meta name="author" content="Curtis Thompson" />
+    	<meta name="description" content="Static websites offer several advantages to dynamic websites, and converting a dynamic website to a static one should be something to consider if possible. Since a static website is built only from HTML, CSS, and Javascript it is easy for someone to build. Since the server will only be returning file to users, page-load times are also much quicker, and costs lower as there is no need for expensive backend servers." />
+    	<meta name="keywords" content="aws, amazon, amplify, route 53, GitHub, website, static, html, css, domain, web hosting" />
+
+	</head>
+	
+	<body>
+		<div id="header">
+			<div id="ct-header">
+				<div class="header-width-container">
+				    <a href="/"><p>Curtis Thompson</p></a>
+				</div>
+			</div>
+			<div id="menu">
+		        <div class="header-width-container">
+		        	<a href="/"><div class="menu-button">
+		        		<h2>Home</h2>
+		        	</div></a>
+		        	<a href="/projects"><div class="menu-button">
+		        		<h2>Projects</h2>
+		        	</div></a>
+		        	<a href="/about"><div class="menu-button">
+		        		<h2>About</h2>
+		        	</div></a>
+		        	<a href="/notes"><div class="menu-button">
+		        		<h2>Notes</h2>
+		        	</div></a>
+		        </div>
+		    </div>
+			<div id="menu-mobile-button"><div class="header-width-container"><h2>&#9776; Menu</h2></div></div>
+			<div id="menu-mobile">
+			    <div class="header-width-container">
+		    		<a href="/"><div class="menu-button">
+		    			<h2>Home</h2>
+		    		</div></a>
+		    		<a href="/projects"><div class="menu-button">
+		    			<h2>Projects</h2>
+		    		</div></a>
+		    		<a href="/about"><div class="menu-button">
+		    			<h2>About</h2>
+		    		</div></a>
+		    		<a href="/notes"><div class="menu-button">
+		    			<h2>Notes</h2>
+		    		</div></a>
+		    	</div>
+			</div>
+		    <script src="/js/mobile-menu.js"></script>
+		</div>
+	
+		<div id="main-content">
+    		<h1 id="small-header-box">Static Websites with AWS Amplify</h1>
+    		<div class="notes-text">
+        		<div class="notes-details">
+					<span class="author">Curtis Thompson</span>
+					<span class="date">Sunday 10th January 2021</span>
+					<span class="topic">Projects and Programming</span>
+				</div>
+        		
+        		
+				<p>Static websites offer several advantages to dynamic websites, and converting a dynamic website to a static one should be something to consider if possible. Since a static website is built only from HTML, CSS, and Javascript it is easy for someone to build. Since the server will only be returning file to users, page-load times are also much quicker, and costs lower as there is no need for expensive backend servers.</p>
+				<p>That's why I recently considered changing my personal site from a PHP filled dynamic website, to a simple HTML/CSS/Javascript static website. I did this using just:</p>
+				<ul>
+					<li>AWS Amplify, for static web hosting</li>
+					<li>Amazon Route 53, for domain management</li>
+					<li>GitHub, for updating your website and version control</li>
+				</ul>
+				<p>Let's have a quick look at how it's done.</p>
+				
+				<h2>Get Your Code On GitHub</h2>
+				<p>Once you have coded up your static pages, the first step is to create a repository on GitHub, upload them to there. I won't explain the details of how to do this as it should be familiar to anyone coding their own static website. If you are struggling at this step though, just sign up to GitHub and they will have step-by-step instructions on how to do it - it shouldn't take ant longer than 5 minutes.</p>
+				
+				<h2>Connect Your Repository To AWS Amplify</h2>
+				<p>The next step is to connect your new GitHub repository to the AWS Amplify console. To do this, go on the AWS Amplify homepage. You should find two options, either "Develop" or "Deliver". You want to select the deliver option to host your web app, which is a static website in this case.</p>
+				<div class="captioned-image">
+        		    <img alt="AWS Amplify Get Started" src="aws-amplify-get-started.png" />
+        		    <p>Select the "Deliver" option to host a static website.</p>
+        		</div>
+				<p>You will then be given the option to connect to GitHub, which is what you want to do. When connected, you will be able to select one of your repositories, and the specific branch of that repository. If you are unsure about what the branch settings are, just leave it as the default given by AWS.</p>
+				<p>Next, you will go through build settings. For now, we can leave that as it is. For my personal website I used this to select a specific directory in my repository, but for this tutorial we will leave it for now. Review all of your settings, and then save and deploy.</p>
+				<div class="captioned-image">
+        		    <img alt="AWS Amplify deployment" src="deployment.png" />
+        		    <p>How your console should look when AWS Amplify is deploying your website.</p>
+        		</div>
+				<p>Your website is now being deployed, and there will be a link to view it once deployment is complete.</p>
+				
+				<h2>Get Your Domain With Amazon Route 53</h2>
+				<p>Amazon Route 53 is an AWS service that allows you to manage domain names. If you want a domain for your static website, you can buy one here. You can also transfer a domain name over from another domain management service, which is what I did.</p>
+				<p>Once you have your domain name set up, you can connect it to your website in the AWS Amplify settings, under "Domain Management".</p>
+				
+				<h2>Updating Your Website</h2>
+				<p>At this point, you don't need to ever view AWS Amplify again, if you don't want to.</p>
+				<p>If you want to update your website, push the updates straight to your GitHub repository. AWS Amplify will then detect that there has been an update, and will update your website for you. And that's all!</p>
+
+        	</div>
+            
+            <div class="notes-others">
+        		<h2>Recommended Notes</h2><div class='notes-indiv-container'><a href='\notes\2016\03\31\chatterbots-panda-and-eliza.html'><img class='notes-image' alt='Chatterbots, Panda and ELIZA' src='\notes\2016\03\31\thumb.png'/></a><a href='\notes\2016\03\31\chatterbots-panda-and-eliza.html'><h3 class='notes-title'>Chatterbots, Panda and ELIZA</h3></a><p class='notes-time'>Thursday 31st March 2016</p><a class='read-article' href='\notes\2016\03\31\chatterbots-panda-and-eliza.html'>Read Notes</a></div><div class='notes-indiv-container'><a href='\notes\2017\04\02\thailand-adventure-march-update.html'><img class='notes-image' alt='Thailand Adventure: March Update' src='\notes\2017\04\02\thumb.png'/></a><a href='\notes\2017\04\02\thailand-adventure-march-update.html'><h3 class='notes-title'>Thailand Adventure: March Update</h3></a><p class='notes-time'>Sunday 2nd April 2017</p><a class='read-article' href='\notes\2017\04\02\thailand-adventure-march-update.html'>Read Notes</a></div><div class='notes-indiv-container'><a href='\notes\2017\04\05\cs118-programming-notes.html'><img class='notes-image' alt='CS118 Programming Notes' src='\notes\2017\04\05\thumb.png'/></a><a href='\notes\2017\04\05\cs118-programming-notes.html'><h3 class='notes-title'>CS118 Programming Notes</h3></a><p class='notes-time'>Wednesday 5th April 2017</p><a class='read-article' href='\notes\2017\04\05\cs118-programming-notes.html'>Read Notes</a></div>
+            </div>
+    	</div>
+		
+		<div id="footer">
+		    <div class="footer-width-container">
+		        <div class="footer-column">
+		            <h2>Curtis Thompson</h2>
+		            <p>Well, let me just say a few words about myself... I'm a MEng Computer Science graduate from the University of Warwick, interested in taking on new challenges. Hopefully you can see that through the projects and notes on my website. Oh, and I love running!</p>
+		        </div>
+		        
+		        <div class="footer-column">
+		            <h2>Menu</h2>
+		            <ul>
+		                <li><a href="/">Home</a></li>
+		                <li><a href="/projects/">Projects</a></li>
+		                <li><a href="/about/">About</a></li>
+		                <li><a href="/notes/">Notes</a></li>
+		            </ul>
+		        </div>
+		        
+		        <div class="footer-column">
+		            <h2>Get In Touch</h2>
+		            <ul>
+		                <li class="website"><a href="/">www.cwthompson.com</a></li>
+		                <li class="linkedin"><a href="https://www.linkedin.com/in/curtis-comp-sci" target="_blank">LinkedIn</a></li>
+		                <li class="kaggle"><a href="https://www.kaggle.com/cwthompson" target="_blank">Kaggle</a></li>
+		                <li class="github"><a href="https://github.com/CurtisThompson/" target="_blank">GitHub</a></li>
+		            </ul>
+		        </div>
+		        
+		        <p class="copyright">&copy; 2015-2021 Curtis Thompson</p>
+		    </div>
+		</div>
+	</body>
+	
+</html>
