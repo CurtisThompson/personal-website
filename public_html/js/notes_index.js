@@ -1,9 +1,9 @@
 function create_notes_html(dict) {
 	var note_html = "<div class='notes-indiv-container'>";
-	note_html += "<a href='" + dict.URL + "'><h3 class='notes-title'>" + dict.Title + "</h3></a>\n";
+	note_html += "<a href='" + dict.URL.replace(".html", "") + "'><h3 class='notes-title'>" + dict.Title + "</h3></a>\n";
 	note_html += "<p class='notes-author'>" + dict.Author + "</p><p class='notes-time'>" + dict.Date + "</p>\n";
 	note_html += "<p class='notes-desc'>" + dict.Content + "</p>\n";
-	note_html += "<a class='read-article' href='" + dict.URL + "'>Read Notes</a>\n";
+	note_html += "<a class='read-article' href='" + dict.URL.replace(".html", "") + "'>Read Notes</a>\n";
 	note_html += "</div>";
 	return note_html;
 }

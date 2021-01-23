@@ -128,7 +128,7 @@ indices = pd.Series(articles['URL'])
 # Recommendation HTML
 def recommendation_html(url):
     data = [n for n in notes if n[0] == url][0]
-    data[0] = data[0].replace('.\\no_public_html', '')
+    data[0] = data[0].replace('.\\no_public_html', '').replace('.html', '')
     html = "<div class='notes-indiv-container'>"
     html += "<a href='" + data[0] + "'><img class='notes-image' alt='" + data[1] + "' src='" + '\\'.join(data[0].split('\\')[:-1]) + "\\thumb.png'/></a>"
     html += "<a href='" + data[0] + "'><h3 class='notes-title'>" + data[1] + "</h3></a>"
