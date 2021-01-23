@@ -36,7 +36,8 @@ def note_other_html(url):
         for u in r:
             html += recommendation_html(u)
         return html
-    except:
+    except Exception as e:
+        print(e)
         return ''
 
 
@@ -128,12 +129,12 @@ indices = pd.Series(articles['URL'])
 # Recommendation HTML
 def recommendation_html(url):
     data = [n for n in notes if n[0] == url][0]
-    data[0] = data[0].replace('.\\no_public_html', '').replace('.html', '')
+    data_url = data[0].replace('.\\no_public_html', '').replace('.html', '')
     html = "<div class='notes-indiv-container'>"
-    html += "<a href='" + data[0] + "'><img class='notes-image' alt='" + data[1] + "' src='" + '\\'.join(data[0].split('\\')[:-1]) + "\\thumb.png'/></a>"
-    html += "<a href='" + data[0] + "'><h3 class='notes-title'>" + data[1] + "</h3></a>"
+    html += "<a href='" + data_url + "'><img class='notes-image' alt='" + data[1] + "' src='" + '\\'.join(data[0].split('\\')[:-1]) + "\\thumb.png'/></a>"
+    html += "<a href='" + data_url + "'><h3 class='notes-title'>" + data[1] + "</h3></a>"
     html += "<p class='notes-time'>" + data[3] + "</p>"
-    html += "<a class='read-article' href='" + data[0] + "'>Read Notes</a>"
+    html += "<a class='read-article' href='" + data_url + "'>Read Notes</a>"
     html += "</div>"
     return html
 
