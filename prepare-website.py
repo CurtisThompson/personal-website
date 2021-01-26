@@ -243,9 +243,9 @@ PREFILLED_PROJECTS = prefill_template(PROJECTS_TEMPLATE)
 # Go through files and merge with templates, then output
 for file in html_files:
     #print(file)
-    if '\\notes\\' in file and file != '\\no_public_html\\notes\\index.html':
+    if '\\notes\\' in file and file != '.\\no_public_html\\notes\\index.html':
         data = fill_file(file, PREFILLED_NOTES)
-    elif '\\projects\\' in file and file != '\\no_public_html\\projects\\index.html':
+    elif '\\projects\\' in file and file != '.\\no_public_html\\projects\\index.html':
         data = fill_file(file, PREFILLED_PROJECTS)
     else:
         data = fill_file(file, PREFILLED_TEMPLATE)
