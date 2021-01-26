@@ -19,14 +19,14 @@
 		<script src="/js/jquery-3.2.0.js"></script>
 	
 		
-		<title>Curtis Thompson - Analysis and Generation of Rap Lyrics</title>
 		<link rel="stylesheet" type="text/css" href="/stylesheets/main.css" />
 		<link rel="stylesheet" type="text/css" href="/stylesheets/projects.css" />
 		<meta name="author" content="Curtis Thompson" />
 		<meta name="description" content="This project explores techniques used to artificially generate rap lyrics and presents a new technique for lyric generation centred around iterative improvements upon random text, akin to a hill-climbing algorithm. The resulting software is able to generate lyrics with a higher rhyme density than existing Markov chain and word substitution lyric generation models." />
 		<meta name="keywords" content="curtis thompson, university of warwick, dissertation, rap, hip hop, generation of lyrics, natural language generation, markov chains, analysis" />
-		<script src="/js/spoiler-change.js"></script>
 
+		<title>Curtis Thompson - Analysis and Generation of Rap Lyrics</title>
+		<script src="/js/spoiler-change.js"></script>
 	</head>
 	
 	
@@ -73,7 +73,6 @@
 		    <script src="/js/mobile-menu.js"></script>
 		</div>
 	
-		
 		<div id="main-content">
 			<h1 id="small-header-box">Analysis and Generation of Rap Lyrics</h1>
 			
@@ -84,23 +83,29 @@
 				<div class="info-row"><span class="info-head">Description</span><span class="info-body">This project explores techniques used to artificially generate rap lyrics and presents a new technique for lyric generation centred around iterative improvements upon random text, akin to a hill-climbing algorithm. 21 metrics were implemented in a Python tool for songwriters to analyse their rap lyrics, including a new algorithm for rhyme detection. Random text is generated via a Markov chain-based approach using lyrics taken from Genius and classified as rap lyrics with 96% accuracy. The metrics are then used to suggest improvements to the lyrics, bringing each metric closer to the means found in existing lyrics. The resulting software is able to generate lyrics with a higher rhyme density than existing Markov chain and word substitution lyric generation models.</span></div>
 			</div>
 			
+			
+
+			
 			<div class="project-text-box project-image-container">
-			    <img src="generation-of-rap-rect.png" class="project-image" alt="Rap Lyric Analysis Interface" />
+			    <img src="main-image.png" class="project-image" alt="Analysis and Generation of Rap Lyrics" />
 			</div>
 			
 			<div class="project-text-box">
 				<h2>Features</h2>
+				
 				<ul>
 					<li>Web interface for analysing lyrics based upon 21 metrics</li>
 					<li>Random forest classifier able to quantify a text's similarity to existing rap lyrics</li>
 					<li>Markov chain for generating single lines of text, trained on over 20000 song lyrics (over 1,500,000 lines)</li>
 					<li>Generation of lyrics through iterative improvement of existing text</li>
 				</ul>
+
 			</div>
 			
 			<div class="project-text-box">
 				<h2>Questions</h2>
-				<div class="spoiler-button spoilerbutton">What was the result of your work?</div>
+				
+<div class="spoiler-button spoilerbutton">What was the result of your work?</div>
 				<div id="spoiler1" class="spoiler">Overall, my new method of generating lyrics appeared more similar to existing rap lyrics than the other three methods studied in the dissertation (based upon the created 'rap likeness' classifier). In terms of the rhyme factor feature, the created system was able to outperform 15 of the 98 professional rappers used in the study - whereas two of the three existing systems would not beat any of these rappers. The dissertation also received 80% at the end of the year.</div>
 				<div class="spoiler-button spoilerbutton">What was the motivation for this project?</div>
 				<div id="spoiler2" class="spoiler">During the third year of university we all have to do a large solo project. I wanted to combine one of my interests or hobbies with an exciting area of Computer Science, as I believe this is possible for most interests if you take the right approach. While looking for inspirations I cam across the work of Eric Malmi, and his algorithm for detecting rhymes. From there I got lots of ideas for natural language processing, and ultimately came up with my system for generating rap lyrics. This is how "Analysis and Generation of Rap Lyrics" was born.</div>
@@ -112,9 +117,9 @@
 				<div id="spoiler5" class="spoiler">I did not struggle with project management of the overall project but there was a specific time where I fell behind on work and needed to adapt the plan to get back on track. Although I put in some mitigations to help, I still learnt a lot about juggling tasks. Not everything will be completed in the planned time, particularly when you also need to learn new information about tools or domain-specific knowledge. In a project like this, extra planning or research near the beginning will save more time during development.</div>
 				<div class="spoiler-button spoilerbutton">What metrics can the analysis system use to quantify rap lyrics?</div>
 				<div id="spoiler6" class="spoiler">There is a large variety of metrics, including:<ul><li>Rhyme density</li><li>Profanity count</li><li>Line syllable similarity</li><li>Reading age</li></ul></div>
+
 			</div>
 		</div>
-
 		
 		<div id="footer">
 		    <div class="footer-width-container">

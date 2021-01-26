@@ -1,44 +1,29 @@
-<!HEADCONTENT!>
-		<title>Curtis Thompson - Multi-Threaded Packet Sniffer</title>
-		<link rel="stylesheet" type="text/css" href="/stylesheets/main.css" />
-		<link rel="stylesheet" type="text/css" href="/stylesheets/projects.css" />
-		<meta name="author" content="Curtis Thompson" />
-		<meta name="description" content="A Linux packet sniffer that is able to detect and analyse Ethernet, ARP, IP, TCP and HTTP packets. The system also detects ARP cache-poisoning attacks, Christmas Tree attacks and blacklisted URL requests. A thread pool of up to 8 threads allows for multiple packets to be analysed at once." />
-		<meta name="keywords" content="curtis, thompson, c, operating systems, ARP, TCP, IP, HTTP, blacklisted URLs, christmas tree, packet sniffer, threading, networks, linux" />
-		<script src="/js/spoiler-change.js"></script>
-<!HEADCONTENT!>
+<!PROJECTNAME!>Multi-Threaded Packet Sniffer<!PROJECTNAME!>
 
-<!BODYCONTENT!>
-		<div id="main-content">
-			<h1 id="small-header-box">Multi-Threaded Packet Sniffer</h1>
-			
-			<div class="project-text-box">
-				<div class="info-row"><span class="info-head">Date</span><span class="info-body">November 2017 - December 2017</span></div>
-				<div class="info-row"><span class="info-head">Role</span><span class="info-body">Solo Project</span></div>
-				<div class="info-row"><span class="info-head">Technologies</span><span class="info-body">C</span></div>
-				<div class="info-row"><span class="info-head">Description</span><span class="info-body">A Linux packet sniffer that is able to detect and analyse Ethernet, ARP, IP, TCP and HTTP packets. The system also detects ARP cache-poisoning attacks, Christmas Tree attacks and blacklisted URL requests. A thread pool of up to 8 threads allows for multiple packets to be analysed at once.</span></div>
-			</div>
-			
+<!PROJECTDATE!>November 2017 - December 2017<!PROJECTDATE!>
+
+<!PROJECTROLE!>Solo Project<!PROJECTROLE!>
+
+<!PROJECTTECH!>C<!PROJECTTECH!>
+
+<!PROJECTDESC!>A Linux packet sniffer that is able to detect and analyse Ethernet, ARP, IP, TCP and HTTP packets. The system also detects ARP cache-poisoning attacks, Christmas Tree attacks and blacklisted URL requests. A thread pool of up to 8 threads allows for multiple packets to be analysed at once.<!PROJECTDESC!>
+
+<!PROJECTLINKS!>
 			<div class="project-text-box project-button-container">
 				<a href="Report.pdf" class="project-button download">Report</a>
 			</div>
-			
-			<div class="project-text-box project-image-container">
-			    <img src="packet-sniffer.png" class="project-image" alt="Packet Sniffer Results" />
-			</div>
-			
-			<div class="project-text-box">
-				<h2>Features</h2>
+<!PROJECTLINKS!>
+
+<!PROJECTFEATURES!>
 				<ul>
 					<li>Detects Ethernet, ARP, IP, TCP, and HTTP packets</li>
 					<li>Outputs information contained in the headers and body data</li>
 					<li>Detects ARP cache-poisoning, Christmas tree attacks, and blacklisted URL requests</li>
 					<li>Threadpool of up to 8 threads</li>
 				</ul>
-			</div>
-			
-			<div class="project-text-box">
-				<h2>Questions</h2>
+<!PROJECTFEATURES!>
+
+<!PROJECTQUESTIONS!>
 				<div class="spoiler-button spoilerbutton">Why was this program developed?</div>
 				<div id="spoiler1" class="spoiler">This program was developed as part of the CS241 Operating Systems and Computer Networks course during my university degree. As part of the coursework for the module, I had to develop a C program that was able to detect incoming packets on a Linux system, analysing the packets headers (as well as HTTP data) to alert the user if certain attacks are occuring.</div>
 				<div class="spoiler-button spoilerbutton">What is ARP cache-poisoning, and how is it detected?</div>
@@ -49,6 +34,12 @@
 				<div id="spoiler4" class="spoiler">Within a HTTP packet several pieces of information is contained. One piece of information within requests is the Host URL, the URL being connected to. If this Host is a blacklisted URL (or a variation of one) then the packet can be detected and dealt with.</div>
 				<div class="spoiler-button spoilerbutton">What other protocols can be detected? And is it possible to change the program to detect new protocols?</div>
 				<div id="spoiler5" class="spoiler">The program currently is able to parse Ethernet, ARP, IP, and TCP headers, as well as HTTP data. Packets which do not contain any of these headers will be detected by the program, but the information within them is not parsed. Parsing of the data can be added to the source code however due to the layered parsing method, assuming the structure of the data is known.</div>
-			</div>
-		</div>
-<!BODYCONTENT!>
+<!PROJECTQUESTIONS!>
+
+<!HEADCONTENT!>
+		<link rel="stylesheet" type="text/css" href="/stylesheets/main.css" />
+		<link rel="stylesheet" type="text/css" href="/stylesheets/projects.css" />
+		<meta name="author" content="Curtis Thompson" />
+		<meta name="description" content="A Linux packet sniffer that is able to detect and analyse Ethernet, ARP, IP, TCP and HTTP packets. The system also detects ARP cache-poisoning attacks, Christmas Tree attacks and blacklisted URL requests. A thread pool of up to 8 threads allows for multiple packets to be analysed at once." />
+		<meta name="keywords" content="curtis, thompson, c, operating systems, ARP, TCP, IP, HTTP, blacklisted URLs, christmas tree, packet sniffer, threading, networks, linux" />
+<!HEADCONTENT!>

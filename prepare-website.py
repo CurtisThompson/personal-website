@@ -92,7 +92,10 @@ def fill_file(file, template):
     
     results = template
     for tag in ['<!HEADCONTENT!>', '<!BODYCONTENT!>', '<!NOTETITLE!>',
-                '<!NOTEAUTHOR!>', '<!NOTEDATE!>', '<!NOTETOPIC!>']:
+                '<!NOTEAUTHOR!>', '<!NOTEDATE!>', '<!NOTETOPIC!>',
+                '<!PROJECTNAME!>', '<!PROJECTDATE!>', '<!PROJECTROLE!>',
+                '<!PROJECTTECH!>', '<!PROJECTDESC!>', '<!PROJECTLINKS!>',
+                '<!PROJECTFEATURES!>', '<!PROJECTQUESTIONS!>']:
         results = re.sub(tag, get_tag(data, tag), results)
     if '\\notes\\' in file and file != '.\\no_public_html\\notes\\index.html':
         results = results.replace('<!NOTEOTHERS!>', note_other_html(file))
@@ -215,6 +218,7 @@ FOOTER = get_file_contents('templates/footer.html').replace('\n', '\n\t\t')
 # Get the templates
 GENERIC_TEMPLATE = get_file_contents('templates/general.html')
 NOTES_TEMPLATE = get_file_contents('templates/notes.html')
+PROJECTS_TEMPLATE = get_file_contents('templates/projects.html')
 
 def prefill_template(temp):
     """
@@ -229,19 +233,22 @@ def prefill_template(temp):
     temp = re.sub('<!COREHEADER!>', COREHEADER, temp)
     temp = re.sub('<!MENU!>', MENU, temp)
     temp = re.sub('<!FOOTER!>', FOOTER, temp)
-    return remp
+    return temp
 
 # Fill in the templates with common parts
 PREFILLED_TEMPLATE = prefill_template(GENERIC_TEMPLATE)
 PREFILLED_NOTES = prefill_template(NOTES_TEMPLATE)
+PREFILLED_PROJECTS = prefill_template(PROJECTS_TEMPLATE)
 
 # Go through files and merge with templates, then output
 for file in html_files:
     #print(file)
-    if '\\notes\\' not in file or file == '.\\no_public_html\\notes\\index.html':
-        data = fill_file(file, PREFILLED_TEMPLATE)
-    else:
+    if '\\notes\\' in file and file != '\\no_public_html\\notes\\index.html':
         data = fill_file(file, PREFILLED_NOTES)
+    elif '\\projects\\' in file and file != '\\no_public_html\\projects\\index.html':
+        data = fill_file(file, PREFILLED_PROJECTS)
+    else:
+        data = fill_file(file, PREFILLED_TEMPLATE)
     
     new_path = file.replace('\\no_public_html\\', '\\public_html\\')
     write_file_contents(new_path, data)
