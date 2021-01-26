@@ -4,7 +4,7 @@
     grid-gap: 30px;
 }
 
-@media only screen and (max-width: 700px){
+@media only screen and (max-width: 1000px){
     .grid-container {
         grid-template-columns: 1fr 1fr;
     }
@@ -22,12 +22,13 @@
 }
 
 .grid-container .grid-box {
-    background: #61bdcc;
-    border-radius: 5px;
+    background: #fcfcfc ;
+    border-radius: 5px 5px 0 0;
+    border: 1px solid black;
 }
 
 .grid-container .grid-box:hover {
-    opacity: 0.8;
+    opacity: 0.7;
 }
 
 .grid-container img {
@@ -35,6 +36,7 @@
     width: 100%;
     object-fit: cover;
     border-radius: 5px 5px 0 0;
+    border-bottom: 1px solid black;
 }
 
 .grid-container h3 {
