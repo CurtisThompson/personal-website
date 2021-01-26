@@ -9,7 +9,17 @@ import string
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.feature_extraction.text import CountVectorizer
 
+
 def get_file_contents(file):
+    """
+    Returns the contents of a file as a string.
+    
+    Args:
+        file: the file path to read.
+    
+    Returns:
+        A string of the data in the file.
+    """
     fin = open(file, 'rt')
     data = fin.read()
     fin.close()
@@ -17,12 +27,29 @@ def get_file_contents(file):
 
 
 def write_file_contents(file, data):
+    """
+    Writes the given string to a file.
+    
+    Args:
+        file: the file path to write to.
+        data: the string to write.
+    """
     fin = open(file, 'wt')
     fin.write(data)
     fin.close()
 
 
 def get_tag(template, tag):
+    """
+    Finds and returns the contents of a given tag.
+    
+    Args:
+        template: the string with contents.
+        tag: the tag being read (only the opening bracket).
+    
+    Returns:
+        The contents of the tag, or an empty string if the tag is not found.
+    """
     try:
         return re.findall(tag + '[\s\S]*' + tag, template)[0].replace(tag, '')
     except:
@@ -30,6 +57,15 @@ def get_tag(template, tag):
 
 
 def note_other_html(url):
+    """
+    Returns the recommended notes HTML for a given notes URL.
+    
+    Args:
+        url: the URL of the notes from root.
+    
+    Returns:
+        The HTML for the recommended notes section of the notes.
+    """
     try:
         r = recommend(url.replace('.\\no_public_html', ''))
         html = '<h2>Recommended Notes</h2>'
@@ -42,6 +78,16 @@ def note_other_html(url):
 
 
 def fill_file(file, template):
+    """
+    Merges the contents of a file with a template.
+    
+    Args:
+        file: the file path of the contents.
+        template: the template to merge contents into.
+    
+    Returns:
+        The merged contents.
+    """
     data = get_file_contents(file)
     
     results = template
@@ -56,9 +102,11 @@ def fill_file(file, template):
 # Create List of All Notes
 #########################################################################
 
-PATH = '.\\no_public_html\\notes\\'
+# File path to the notes folder
+NOTES_PATH = '.\\no_public_html\\notes\\'
 
-notes_files = [os.path.join(dp, f) for dp, dn, filenames in os.walk(PATH) for f in filenames if os.path.splitext(f)[1] == '.html']
+# Get a list of all notes file paths
+notes_files = [os.path.join(dp, f) for dp, dn, filenames in os.walk(NOTES_PATH) for f in filenames if os.path.splitext(f)[1] == '.html']
 notes_files.remove('.\\no_public_html\\notes\\index.html')
 
 # Get a list of all notes
@@ -79,7 +127,7 @@ for file in notes_files:
     notes.append([url, title, author, date, topic, content])
 notes = notes[::-1]
 
-# Create JS file
+# Create JS file with a list of dictionaries of all notes
 note_js = 'var notes_list = ['
 for n in notes:
     n_js = '{'
@@ -153,10 +201,11 @@ def recommend(url, cosine_sim = cosine_sim):
 # Build Static Pages From Templates
 #########################################################################
 
+# Folder path to all file contents
 PATH = '.\\no_public_html'
 
+# Get a list of all file paths
 html_files = [os.path.join(dp, f) for dp, dn, filenames in os.walk(PATH) for f in filenames if os.path.splitext(f)[1] == '.html']
-
 
 # Get template parts
 COREHEADER = get_file_contents('templates/core-header.html').replace('\n', '\n\t\t')
@@ -167,15 +216,24 @@ FOOTER = get_file_contents('templates/footer.html').replace('\n', '\n\t\t')
 GENERIC_TEMPLATE = get_file_contents('templates/general.html')
 NOTES_TEMPLATE = get_file_contents('templates/notes.html')
 
-# Fill in the generic template with common parts
-PREFILLED_TEMPLATE = re.sub('<!COREHEADER!>', COREHEADER, GENERIC_TEMPLATE)
-PREFILLED_TEMPLATE = re.sub('<!MENU!>', MENU, PREFILLED_TEMPLATE)
-PREFILLED_TEMPLATE = re.sub('<!FOOTER!>', FOOTER, PREFILLED_TEMPLATE)
+def prefill_template(temp):
+    """
+    Fills in the common parts of all templates.
+    
+    Args:
+        temp: the template to fill in
+    
+    Returns:
+        The prefilled template.
+    """
+    temp = re.sub('<!COREHEADER!>', COREHEADER, temp)
+    temp = re.sub('<!MENU!>', MENU, temp)
+    temp = re.sub('<!FOOTER!>', FOOTER, temp)
+    return remp
 
-# Fill in the notes template with common parts
-PREFILLED_NOTES = re.sub('<!COREHEADER!>', COREHEADER, NOTES_TEMPLATE)
-PREFILLED_NOTES = re.sub('<!MENU!>', MENU, PREFILLED_NOTES)
-PREFILLED_NOTES = re.sub('<!FOOTER!>', FOOTER, PREFILLED_NOTES)
+# Fill in the templates with common parts
+PREFILLED_TEMPLATE = prefill_template(GENERIC_TEMPLATE)
+PREFILLED_NOTES = prefill_template(NOTES_TEMPLATE)
 
 # Go through files and merge with templates, then output
 for file in html_files:
