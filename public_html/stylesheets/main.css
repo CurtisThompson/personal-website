@@ -25,6 +25,12 @@ body {
 #header {
     margin: 0;
     padding: 0;
+    background-color: white;/*#017789;*/
+	font-size: 20px;
+	height: 2.5em;
+	position: sticky;
+	position: -webkit-sticky;
+	top: 0;
 }
 
 .header-width-container {
@@ -36,14 +42,11 @@ body {
 
 #ct-header {
     font-family: 'Concert One', cursive;
-    width: 100%;
-    display: block;
+    display: inline-block;
     margin: 0;
-    padding: 0 0 0.5em;
+    padding: 0;
     font-weight: 900;
-    font-size: 35px;
-    height: 2em;
-    background: #54a0ac;
+    font-size: inherit;
 }
 
 #ct-header a {
@@ -51,63 +54,116 @@ body {
     color: black;
     width: fit-content;
     display: table;
+	margin: 0;
+	padding: 0;
+	height: 2.5em;
+	margin-left: 1em;
 }
 
-#menu-mobile-button,
-#menu-mobile,
+#ct-header a p {
+	margin: 0;
+	padding: 0;
+	line-height: 2.5em;
+}
+
 #menu {
-    display: block;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    background-color: #017789;
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+	float: right;
+	margin-right: 2em;
+	width: 60%;
+	height: 2.5em;
+	text-align: right;
 }
 
 #menu-mobile {
     display: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
     background: #0090a6;
 }
 
 #menu-mobile-button {
     display: none;
+	margin: 0;
     padding: 0.1em 0;
     color: white;
     cursor: pointer;
+	float: right;
+    background-color: #017789;
 }
 
-@media only screen and (max-width: 600px) {
+#menu-mobile-button h2 {
+	font-size: 1em;
+	margin: 0;
+	padding: 0;
+	height: 2.5em;
+	line-height: 2.5em;
+	margin-right: 2em;
+}
+
+@media only screen and (max-width: 650px) {
     #menu-mobile-button {
         display: block;
     }
+	
+	#header {
+		height: auto;
+		background-color: #017789;
+	}
 }
 
 #menu-mobile .menu-button,
 #menu .menu-button {
     display: inline-block;
     width: calc(25% - 10px);
+	height: 2em;
     padding: 0;
-    padding-top: 0.5em;
     margin: 0;
     text-align: center;
+}
+
+#menu .menu-button {
+	height: calc(2.5em - 3px);
+	max-width: 150px;
+	border-bottom: 3px solid white;
 }
 
 #menu-mobile .menu-button {
     text-align: left;
     width: 100%;
+    padding-top: 0.5em;
 }
 
-#menu-mobile .menu-button:hover,
-#menu .menu-button:hover {
+#menu-mobile .menu-button:hover {
     background-color: #c4c6c9
 }
 
-#menu-mobile .menu-button h2,
-#menu .menu-button h2 {
-    margin: 0.5em 0;
-    color: white;
+#menu .menu-button:hover {
+	border-bottom: 3px solid #222;
 }
 
-@media only screen and (max-width: 600px) {
+#menu .menu-button:hover h2 {
+	color: #6666aa;
+}
+
+#menu-mobile .menu-button h2 {
+    margin: 0.5em 0;
+    color: white;
+	font-size: 1em;
+}
+
+#menu .menu-button h2 {
+	margin: 0;
+	line-height: 2.5em;
+	padding: 0;
+	color: #111;/*white;*/
+	font-size: 1em;
+}
+
+@media only screen and (max-width: 650px) {
     #menu {
         display: none;
     }
@@ -120,6 +176,7 @@ body {
     max-width: 1100px;
     margin: 0 auto;
     padding: 0;
+	min-height: calc(100vh - 23em);
 }
 
 #small-header-box {
