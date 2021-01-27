@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=B612:400,700&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Concert+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
 body {
     margin: 0;
@@ -64,6 +65,8 @@ body {
 	margin: 0;
 	padding: 0;
 	line-height: 2.5em;
+	margin-left: 2em;
+	font-family: 'Pacifico', cursive;
 }
 
 #menu {
