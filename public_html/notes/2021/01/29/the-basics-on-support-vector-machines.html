@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	
+	<head>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-175187876-1"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+		
+		  gtag('config', 'UA-175187876-1');
+		</script>
+		
+		<meta charset="UTF-8" />
+		<meta name="theme-color" content="#54a0ac" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="/js/jquery-3.2.0.js"></script>
+    	<title>Curtis Thompson - The Basics on Support Vector Machines</title>
+		
+		<link rel="stylesheet" type="text/css" href="/stylesheets/main.css" />
+    	<link rel="stylesheet" type="text/css" href="/stylesheets/notes.css" />
+    	<meta name="author" content="Curtis Thompson" />
+    	<meta name="description" content="The support vector machine (SVM) is an incredibly common classical machine learning algorithm that can be used in classification and regression problems. But how does it work?" />
+    	<meta name="keywords" content="machine learning, svm, support vector machine, hyperplane, algorithm, data, point, graph, margin" />
+
+	</head>
+	
+	<body>
+		<div id="header">
+			<div id="ct-header">
+				<a href="/"><p>Curtis Thompson</p></a>
+			</div>
+			<div id="menu">
+				<a href="/"><div class="menu-button">
+					<h2>Home</h2>
+				</div></a>
+				<a href="/about"><div class="menu-button">
+					<h2>About</h2>
+				</div></a>
+				<a href="/projects"><div class="menu-button">
+					<h2>Projects</h2>
+				</div></a>
+				<a href="/notes"><div class="menu-button">
+					<h2>Writing</h2>
+				</div></a>
+		    </div>
+			<div id="menu-mobile-button">
+				<h2>&#9776; Menu</h2>
+			</div>
+			<div id="menu-mobile">
+			    <div class="header-width-container">
+		    		<a href="/"><div class="menu-button">
+		    			<h2>Home</h2>
+		    		</div></a>
+		    		<a href="/about"><div class="menu-button">
+		    			<h2>About</h2>
+		    		</div></a>
+		    		<a href="/projects"><div class="menu-button">
+		    			<h2>Projects</h2>
+		    		</div></a>
+		    		<a href="/notes"><div class="menu-button">
+		    			<h2>Writing</h2>
+		    		</div></a>
+		    	</div>
+			</div>
+		    <script src="/js/mobile-menu.js"></script>
+		</div>
+	
+		<div id="main-content">
+    		<h1 id="small-header-box">The Basics on Support Vector Machines</h1>
+    		<div class="notes-text">
+        		<div class="notes-details">
+					<span class="author">Curtis Thompson</span>
+					<span class="date">Friday 29th January 2021</span>
+					<span class="topic">Projects and Programming</span>
+				</div>
+        		
+        		
+				<p>The support vector machine (SVM) is an incredibly common classical machine learning algorithm that can be used in classification and regression problems. But how does it work?</p>
+
+				<h2>What is a Support Vector Machine?</h2>
+				<p>An SVM is a supervised machine learning algorithm, most commonly used in classification problems.</p>
+				<p>In the algorithm, we plot each data point as a point in n-dimensional space (where n is the number of features in the dataset). We then find a hyperplane that differentiates the two classes well, and we can use this to classify data points.</p>
+				
+				<h2>How Does The Algorithm Work?</h2>
+				<p>With the training data points plotted in n-dimensional space, the algorithm finds equations (hyperplanes) that can split the data points into the separate classes. However, there are potentially infinite equations that can do this.</p>
+				<div class="captioned-image">
+        		    <img alt="SVM Hyperplanes" src="svm2.png" />
+        		    <p>Possible hyperplanes to divide the data.</p>
+        		</div>
+				<p>Therefore, the algorithm will find the equation that maximises the margin, which is the distance between the hyperplane and the closest data point. The hyperplane where the margin of separation is maximised is known as the optimal hyperplane.</p>
+				<div class="captioned-image">
+        		    <img alt="SVM Optimal Hyperplane" src="svm3.png" />
+        		    <p>The optimal hyperplane for the data.</p>
+        		</div>
+				<p>The best mathematical explanation can probably be found at <a href="https://www.analyticsvidhya.com/blog/2020/10/the-mathematics-behind-svm/" target="_blank">Analytics Vidhya</a>. 
+				<p>The SVM algorithm is as simple as that (in basic cases, of course). In real-world data, is in more common for the data to not be linearly separable. However, this can be dealt with by replacing the mathematical dot products with non-linear kernels. This puts the data points into a transformed feature space where the data is now separable.</p>
+
+        	</div>
+            
+            <div class="notes-others">
+        		<h2>Recommended Notes</h2><div class='notes-indiv-container'><a href='\notes\2017\04\01\cs130-mathematics-1-quick-notes'><img class='notes-image' alt='CS130 Mathematics I Quick Notes' src='\notes\2017\04\01\thumb.png'/></a><a href='\notes\2017\04\01\cs130-mathematics-1-quick-notes'><h3 class='notes-title'>CS130 Mathematics I Quick Notes</h3></a><p class='notes-time'>Saturday 1st April 2017</p><a class='read-article' href='\notes\2017\04\01\cs130-mathematics-1-quick-notes'>Read Notes</a></div><div class='notes-indiv-container'><a href='\notes\2017\04\05\cs118-programming-notes'><img class='notes-image' alt='CS118 Programming Notes' src='\notes\2017\04\05\thumb.png'/></a><a href='\notes\2017\04\05\cs118-programming-notes'><h3 class='notes-title'>CS118 Programming Notes</h3></a><p class='notes-time'>Wednesday 5th April 2017</p><a class='read-article' href='\notes\2017\04\05\cs118-programming-notes'>Read Notes</a></div><div class='notes-indiv-container'><a href='\notes\2017\04\17\cs130-mathematics-1-notes'><img class='notes-image' alt='CS130 Mathematics I Notes' src='\notes\2017\04\17\thumb.png'/></a><a href='\notes\2017\04\17\cs130-mathematics-1-notes'><h3 class='notes-title'>CS130 Mathematics I Notes</h3></a><p class='notes-time'>Monday 17th April 2017</p><a class='read-article' href='\notes\2017\04\17\cs130-mathematics-1-notes'>Read Notes</a></div>
+            </div>
+    	</div>
+		
+		<div id="footer">
+		    <div class="footer-width-container">
+		        <div class="footer-column">
+		            <h2>Curtis Thompson</h2>
+		            <p>Well, let me just say a few words about myself... I'm a MEng Computer Science graduate from the University of Warwick, interested in taking on new challenges. Hopefully you can see that through the projects and notes on my website. Oh, and I love running!</p>
+		        </div>
+		        
+		        <div class="footer-column">
+		            <h2>Menu</h2>
+		            <ul>
+		                <li><a href="/">Home</a></li>
+		                <li><a href="/about/">About</a></li>
+		                <li><a href="/projects/">Tech</a></li>
+		                <li><a href="/notes/">Writing</a></li>
+		            </ul>
+		        </div>
+		        
+		        <div class="footer-column">
+		            <h2>Get In Touch</h2>
+		            <ul>
+		                <li class="website"><a href="/">www.cwthompson.com</a></li>
+		                <li class="linkedin"><a href="https://www.linkedin.com/in/curtis-comp-sci" target="_blank">LinkedIn</a></li>
+		                <li class="kaggle"><a href="https://www.kaggle.com/cwthompson" target="_blank">Kaggle</a></li>
+		                <li class="github"><a href="https://github.com/CurtisThompson/" target="_blank">GitHub</a></li>
+		            </ul>
+		        </div>
+		        
+		        <p class="copyright">&copy; 2015-2021 Curtis Thompson</p>
+		    </div>
+		</div>
+	</body>
+	
+</html>
