@@ -9,6 +9,8 @@ import string
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.feature_extraction.text import CountVectorizer
 
+# Set random seeds
+np.random.seed(0)
 
 def get_file_contents(file):
     """
