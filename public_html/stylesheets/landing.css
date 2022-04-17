@@ -146,4 +146,7 @@
 
 div.landing-color {
     background-color:#d1edff;
+	background-image: url('/images/amsterdam-art.jpg');
+	background-size: cover;
+	min-height: 500px;
 }
