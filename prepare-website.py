@@ -68,60 +68,63 @@ def fill_file(file, template):
                 '<!PROJECTTECH!>', '<!PROJECTDESC!>', '<!PROJECTLINKS!>',
                 '<!PROJECTFEATURES!>', '<!PROJECTQUESTIONS!>']:
         results = re.sub(tag, get_tag(data, tag), results)
-    if '\\notes\\' in file and file != '.\\no_public_html\\notes\\index.html':
-        results = results.replace('<!NOTEOTHERS!>', note_other_html(file))
     return results
 
 
-#########################################################################
-# Build Static Pages From Templates
-#########################################################################
-
-# Folder path to all file contents
-PATH = '.\\no_public_html'
-
-# Get a list of all file paths
-html_files = [os.path.join(dp, f) for dp, dn, filenames in os.walk(PATH) for f in filenames if os.path.splitext(f)[1] == '.html']
-
-# Get template parts
-COREHEADER = get_file_contents('templates/core-header.html').replace('\n', '\n\t\t')
-MENU = get_file_contents('templates/menu.html').replace('\n', '\n\t\t')
-FOOTER = get_file_contents('templates/footer.html').replace('\n', '\n\t\t')
-
-# Get the templates
-GENERIC_TEMPLATE = get_file_contents('templates/general.html')
-NOTES_TEMPLATE = get_file_contents('templates/notes.html')
-PROJECTS_TEMPLATE = get_file_contents('templates/projects.html')
-
-def prefill_template(temp):
+def prefill_template(temp, header, footer, menu):
     """
     Fills in the common parts of all templates.
     
     Args:
         temp: the template to fill in
+        header: the HTML string for the site header
+        footer: the HTML string for the site footer
+        menu: the HTML string for the site menu
     
     Returns:
         The prefilled template.
     """
-    temp = re.sub('<!COREHEADER!>', COREHEADER, temp)
-    temp = re.sub('<!MENU!>', MENU, temp)
-    temp = re.sub('<!FOOTER!>', FOOTER, temp)
+    temp = re.sub('<!COREHEADER!>', header, temp)
+    temp = re.sub('<!MENU!>', menu, temp)
+    temp = re.sub('<!FOOTER!>', footer, temp)
     return temp
 
-# Fill in the templates with common parts
-PREFILLED_TEMPLATE = prefill_template(GENERIC_TEMPLATE)
-PREFILLED_NOTES = prefill_template(NOTES_TEMPLATE)
-PREFILLED_PROJECTS = prefill_template(PROJECTS_TEMPLATE)
 
-# Go through files and merge with templates, then output
-for file in html_files:
-    #print(file)
-    if '\\notes\\' in file and file != '.\\no_public_html\\notes\\index.html':
-        data = fill_file(file, PREFILLED_NOTES)
-    elif '\\projects\\' in file and file != '.\\no_public_html\\projects\\index.html':
-        data = fill_file(file, PREFILLED_PROJECTS)
-    else:
-        data = fill_file(file, PREFILLED_TEMPLATE)
-    
-    new_path = file.replace('\\no_public_html\\', '\\public_html\\')
-    write_file_contents(new_path, data)
+def build_website():
+    """Builds all HTML pages for the website from templates."""
+    # Folder path to all file contents
+    PATH = '.\\no_public_html'
+
+    # Get a list of all file paths
+    html_files = [os.path.join(dp, f) for dp, dn, filenames in os.walk(PATH) for f in filenames if os.path.splitext(f)[1] == '.html']
+
+    # Get template parts
+    COREHEADER = get_file_contents('templates/core-header.html').replace('\n', '\n\t\t')
+    MENU = get_file_contents('templates/menu.html').replace('\n', '\n\t\t')
+    FOOTER = get_file_contents('templates/footer.html').replace('\n', '\n\t\t')
+
+    # Get the templates
+    GENERIC_TEMPLATE = get_file_contents('templates/general.html')
+    NOTES_TEMPLATE = get_file_contents('templates/notes.html')
+    PROJECTS_TEMPLATE = get_file_contents('templates/projects.html')
+
+    # Fill in the templates with common parts
+    PREFILLED_TEMPLATE = prefill_template(GENERIC_TEMPLATE, COREHEADER, FOOTER, MENU)
+    PREFILLED_NOTES = prefill_template(NOTES_TEMPLATE, COREHEADER, FOOTER, MENU)
+    PREFILLED_PROJECTS = prefill_template(PROJECTS_TEMPLATE, COREHEADER, FOOTER, MENU)
+
+    # Go through files and merge with templates, then output
+    for file in html_files:
+        if '\\notes\\' in file and file != '.\\no_public_html\\notes\\index.html':
+            data = fill_file(file, PREFILLED_NOTES)
+        elif '\\projects\\' in file and file != '.\\no_public_html\\projects\\index.html':
+            data = fill_file(file, PREFILLED_PROJECTS)
+        else:
+            data = fill_file(file, PREFILLED_TEMPLATE)
+        
+        new_path = file.replace('\\no_public_html\\', '\\public_html\\')
+        write_file_contents(new_path, data)
+
+
+if __name__ == "__main__":
+    build_website()
