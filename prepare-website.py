@@ -90,6 +90,16 @@ def prefill_template(temp, header, footer, menu):
     return temp
 
 
+def clear_old_html():
+    """Removes all previous HTML files to prepare for new build. Does not delete templates and assets."""
+    html_folder = '.\\public_html'
+    html_files = [os.path.join(dp, f) for dp, _, filenames in os.walk(html_folder) for f in filenames
+                  if (os.path.splitext(f)[1] == '.html')]
+    for h in html_files:
+        if '\\php-assets\\' not in h:
+            os.remove(h)
+
+
 def build_website():
     """Builds all HTML pages for the website from templates."""
     # Folder path to all file contents
@@ -112,6 +122,9 @@ def build_website():
     PREFILLED_TEMPLATE = prefill_template(GENERIC_TEMPLATE, COREHEADER, FOOTER, MENU)
     PREFILLED_NOTES = prefill_template(NOTES_TEMPLATE, COREHEADER, FOOTER, MENU)
     PREFILLED_PROJECTS = prefill_template(PROJECTS_TEMPLATE, COREHEADER, FOOTER, MENU)
+
+    # Remove old HTML files
+    clear_old_html()
 
     # Go through files and merge with templates, then output
     for file in html_files:
